@@ -1,0 +1,11 @@
+﻿  Optimization_step2.cpp
+c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(18): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(32): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(155): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(262): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(269): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(275): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(282): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(288): warning C4018: '<': signed/unsigned mismatch
+  Optimization_step2.vcxproj -> C:\Users\User\documents\visual studio 2015\Projects\Optimization_step2\Debug\Optimization_step2.exe
+  Optimization_step2.vcxproj -> C:\Users\User\documents\visual studio 2015\Projects\Optimization_step2\Debug\Optimization_step2.pdb (Full PDB)
