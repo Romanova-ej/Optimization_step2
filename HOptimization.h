@@ -29,8 +29,8 @@ class  Fletcher_Rivs :public Optimization {
 public:
 	virtual const char* get_method_name() const;
 	double find_border_alpha(vector<double>& x, Area& D);
-	virtual vector<double> minimize(vector<double> x, Function& f, Area& D, Criterion& c1, Criterion& c2) override;
-	double argmin(vector<double> x, Function& f, Area& D);
+	virtual vector<double> minimize( vector<double> x, Function& f, Area& D, Criterion& c1, Criterion& c2) override;
+	double argmin(vector<double> x, Function& f, Area& D,double);
 };
 
 class Random_Search : public Optimization {
@@ -44,7 +44,7 @@ public:
 	Random_Search(double probability = 0.8, int whenSTOP = 1000, double whatchange = 0.8);
 	double initial_radius(Area& D) const;
 	virtual const char* get_method_name() const;
-	virtual vector<double> minimize(vector<double> x, Function& f, Area& D, Criterion& c1, Criterion& c2) override;
+	virtual vector<double> minimize( vector<double> x, Function& f, Area& D, Criterion& c1, Criterion& c2) override;
 };
 
 

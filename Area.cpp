@@ -1,7 +1,7 @@
 #include "HArea.h"
 using namespace std;
 
-void Area::set_area(vector<double> l, vector<double> r) {
+void Area::set_area(const vector<double>& l, const  vector<double>& r) {
 	left = l;
 	right = r;
 	dim = l.size();

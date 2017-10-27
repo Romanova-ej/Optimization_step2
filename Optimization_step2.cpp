@@ -35,13 +35,13 @@ void vector_print(vector<double> x)  {
 	cout << endl;
 }
 
-double scalar_prod(vector<double> a, vector<double> b) {
+double scalar_prod(const vector<double>& a, const vector<double>& b) {
 	double sum = 0;
 	for (int i = 0; i < a.size(); ++i)
 		sum += a[i] * b[i];
 	return sum;
 }
-double norm(vector<double>& x) {
+ double norm(const vector<double>& x) {
 	double temp = 0;
 	for (int i = 0; i < x.size(); ++i) {
 		if (abs(x[i]) > temp) temp = abs(x[i]);
@@ -52,12 +52,21 @@ double norm(vector<double>& x) {
 
 int main()
 {
+	//////////////////ВАЖНО: в argmin должна быть такая же точность eps, как и в Критерии по норме!!! 
 	fun1 f1; 
-	Criterion_grad_norm cf(0.00001); Criterion_num_of_iteration df;//эти критерии логично использовать для Флетчера-Ривса
-	Criterion_num_of_nochange_iteration cr; Criterion_dif_of_f dr;//эти критерии логично использовать для Случайного поиска. мб все же сделать критерии выхода членами класса оптимизация и по умолчанию прописывать? 
-	vector<double> x(2, 0);
-	vector_print(f1.grad(x));
 	Area_dim2 D;
+	Criterion_grad_norm cf(0.0001); Criterion_num_of_iteration df;//эти критерии логично использовать для Флетчера-Ривса
+	Criterion_num_of_nochange_iteration cr(1000); Criterion_grad_norm dr(0.00001);//Criterion_dif_of_f dr(0.000000001);//эти критерии логично использовать для Случайного поиска. мб все же сделать критерии выхода членами класса оптимизация и по умолчанию прописывать? 
+	vector<double> x;
+	cout << "Enter the starting point" << endl << "x= ";
+	for (int i = 0; i < f1.get_dim(); ++i) {
+		double a;
+		cin >> a;
+		x.push_back(a);
+	}
+
+	cout << endl;
+
 
 	vector_print(D.get_left());
 	vector_print(D.get_right());
@@ -65,14 +74,14 @@ int main()
 	
 	Random_Search h; Fletcher_Rivs s;
 	vector<double> res(h.minimize(x, f1, D,cr,dr));//случайный
-	vector<double> res1(s.minimize(x, f1, D, cf, df));//флетчер
+	//vector<double> res1(s.minimize(x, f1, D, cf, df));//флетчер
 	cout << "x= " << endl;
 	vector_print(res);
 	cout << "k= " << h.get_counter() << endl;
-	cout << "x= " << endl;
+	//cout << "x= " << endl;
 
-	vector_print(res1);
-	cout << "k= " << s.get_counter() << endl;
+	//vector_print(res1);
+	//cout << "k= " << s.get_counter() << endl;
 	system("pause");
 	return 0;
 }

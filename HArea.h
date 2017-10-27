@@ -14,9 +14,9 @@ class Area {
 	vector<double> right;
 	int dim;
 public:
-	Area(vector<double>l, vector<double> r) : left(l), right(r), dim(l.size()) {}
+	Area(const vector<double>& l, const vector<double>& r) : left(l), right(r), dim(l.size()) {}
 	Area() : dim(0) {}
-	void set_area(vector<double> l, vector<double> r);
+	void set_area(const vector<double>& l, const vector<double>& r);
 	const int get_dim()const;
 	const vector<double> get_left() const;
 	const vector<double> get_right()const;
