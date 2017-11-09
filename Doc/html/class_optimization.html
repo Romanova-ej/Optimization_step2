@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Multidimensional_optimization: Optimization Class Reference</title>
+<title>Multidimensional optimization: Optimization Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,7 +34,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Multidimensional_optimization
+   <div id="projectname">Multidimensional optimization
    </div>
   </td>
  </tr>
@@ -98,25 +98,25 @@ $(document).ready(function(){initNavTree('class_optimization.html','');});
 
 <p><code>#include &lt;<a class="el" href="_h_optimization_8h_source.html">HOptimization.h</a>&gt;</code></p>
 
-<p>Inherited by <a class="el" href="class_fletcher___rivs.html">Fletcher_Rivs</a>, and <a class="el" href="class_random___search.html">Random_Search</a>.</p>
+<p>Inherited by <a class="el" href="class_fletcher_rivs.html">FletcherRivs</a>, and <a class="el" href="class_random_search.html">RandomSearch</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afbcc2bddcaf625671385b2e2d77fc038"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_optimization.html#afbcc2bddcaf625671385b2e2d77fc038">minimize</a> (vector&lt; double &gt; x, <a class="el" href="class_function.html">Function</a> &amp;f, <a class="el" href="class_area.html">Area</a> &amp;D, <a class="el" href="class_criterion.html">Criterion</a> &amp;c1, <a class="el" href="class_criterion.html">Criterion</a> &amp;c2)=0</td></tr>
-<tr class="memdesc:afbcc2bddcaf625671385b2e2d77fc038"><td class="mdescLeft">&#160;</td><td class="mdescRight">It finds a minimum point with given parameters.  <a href="#afbcc2bddcaf625671385b2e2d77fc038">More...</a><br /></td></tr>
-<tr class="separator:afbcc2bddcaf625671385b2e2d77fc038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d4cf7e7c0d0726822e6e29adecbd252"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_optimization.html#a7d4cf7e7c0d0726822e6e29adecbd252">get_method_name</a> () const =0</td></tr>
-<tr class="separator:a7d4cf7e7c0d0726822e6e29adecbd252"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a248956fcbe43e3766423f287553c2c6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_optimization.html#a248956fcbe43e3766423f287553c2c6f">get_counter</a> () const</td></tr>
-<tr class="separator:a248956fcbe43e3766423f287553c2c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abafd547d745bc790f7f1ca91097f4257"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_optimization.html#abafd547d745bc790f7f1ca91097f4257">newiteration</a> ()</td></tr>
-<tr class="separator:abafd547d745bc790f7f1ca91097f4257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af24d30a738749916977a13f0d2e7fb5f"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_optimization.html#af24d30a738749916977a13f0d2e7fb5f">minimize</a> (vector&lt; double &gt; x, <a class="el" href="class_function.html">Function</a> &amp;f, <a class="el" href="class_criterion.html">Criterion</a> &amp;c)=0</td></tr>
+<tr class="memdesc:af24d30a738749916977a13f0d2e7fb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">It finds a minimum point with given parameters.  <a href="#af24d30a738749916977a13f0d2e7fb5f">More...</a><br /></td></tr>
+<tr class="separator:af24d30a738749916977a13f0d2e7fb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af96548088d418478485c1be6ee73905d"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_optimization.html#af96548088d418478485c1be6ee73905d">getMethodName</a> () const =0</td></tr>
+<tr class="separator:af96548088d418478485c1be6ee73905d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd73fb9765b4f78f0b5e96f3bde796f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_optimization.html#aebd73fb9765b4f78f0b5e96f3bde796f">getCounter</a> () const</td></tr>
+<tr class="separator:aebd73fb9765b4f78f0b5e96f3bde796f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae65912bf7bd893c28405ee82a38fdba6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_optimization.html#ae65912bf7bd893c28405ee82a38fdba6">newIteration</a> ()</td></tr>
+<tr class="separator:ae65912bf7bd893c28405ee82a38fdba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class for solve the problem of multidimensional optimization. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a248956fcbe43e3766423f287553c2c6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a248956fcbe43e3766423f287553c2c6f">&#9670;&nbsp;</a></span>get_counter()</h2>
+<a id="aebd73fb9765b4f78f0b5e96f3bde796f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd73fb9765b4f78f0b5e96f3bde796f">&#9670;&nbsp;</a></span>getCounter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +125,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Optimization::get_counter </td>
+          <td class="memname">int Optimization::getCounter </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -140,8 +140,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7d4cf7e7c0d0726822e6e29adecbd252"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d4cf7e7c0d0726822e6e29adecbd252">&#9670;&nbsp;</a></span>get_method_name()</h2>
+<a id="af96548088d418478485c1be6ee73905d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af96548088d418478485c1be6ee73905d">&#9670;&nbsp;</a></span>getMethodName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -150,7 +150,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const char* Optimization::get_method_name </td>
+          <td class="memname">virtual const char* Optimization::getMethodName </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -163,12 +163,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_random___search.html#a4ba44714765f2835a63765d8ac62dc35">Random_Search</a>, and <a class="el" href="class_fletcher___rivs.html#a2aa5d90c6c4ac0773533adb4ec7c9038">Fletcher_Rivs</a>.</p>
+<p>Implemented in <a class="el" href="class_random_search.html#a84278cf5d586b2576c38d3b7f274d9c1">RandomSearch</a>, and <a class="el" href="class_fletcher_rivs.html#af73e7eb858fdfb37d30b97bfb38ef01e">FletcherRivs</a>.</p>
 
 </div>
 </div>
-<a id="afbcc2bddcaf625671385b2e2d77fc038"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbcc2bddcaf625671385b2e2d77fc038">&#9670;&nbsp;</a></span>minimize()</h2>
+<a id="af24d30a738749916977a13f0d2e7fb5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af24d30a738749916977a13f0d2e7fb5f">&#9670;&nbsp;</a></span>minimize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,20 +191,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_area.html">Area</a> &amp;&#160;</td>
-          <td class="paramname"><em>D</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="class_criterion.html">Criterion</a> &amp;&#160;</td>
-          <td class="paramname"><em>c1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_criterion.html">Criterion</a> &amp;&#160;</td>
-          <td class="paramname"><em>c2</em>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -224,20 +212,18 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>starting point </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>objective function </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">D</td><td>area of minimization </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">c1</td><td>break criterion1 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">c2</td><td>break criterion2 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c1</td><td>break criterion </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>approximation of the vector x on which the objective function reaches a local minimum </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>approximation of the vector x on which the objective function reaches a minimum </dd></dl>
 
-<p>Implemented in <a class="el" href="class_random___search.html#a14fb417ae9e7f3597e5590de599e3846">Random_Search</a>, and <a class="el" href="class_fletcher___rivs.html#a65fe40d186bda0e0a4de8a75aaac01e8">Fletcher_Rivs</a>.</p>
+<p>Implemented in <a class="el" href="class_random_search.html#af3a56e45c9e8922d9d7809ce3b075391">RandomSearch</a>, and <a class="el" href="class_fletcher_rivs.html#a2bf6706dae306522d3c748503385d98e">FletcherRivs</a>.</p>
 
 </div>
 </div>
-<a id="abafd547d745bc790f7f1ca91097f4257"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abafd547d745bc790f7f1ca91097f4257">&#9670;&nbsp;</a></span>newiteration()</h2>
+<a id="ae65912bf7bd893c28405ee82a38fdba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae65912bf7bd893c28405ee82a38fdba6">&#9670;&nbsp;</a></span>newIteration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +232,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Optimization::newiteration </td>
+          <td class="memname">void Optimization::newIteration </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

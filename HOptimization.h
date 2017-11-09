@@ -26,14 +26,13 @@ public:
 	\brief It finds a minimum point with given parameters
 	\param[in] x starting point
 	\param[in] f objective function
-	\param[in] D area of minimization
-	\param[in] c1 break criterion1
-	\param[in] c2 break criterion2
-	\return approximation of the vector x on which the objective function reaches a local minimum
+	\param[in] c1 break criterion
+	\return approximation of the vector x on which the objective function reaches a minimum
 	*/
-	virtual vector<double> minimize(vector<double> x, std::shared_ptr<Function> f, Area& D, Criterion& c) = 0;
+	virtual vector<double> minimize(vector<double> x, Function& f,
+		Criterion& c) = 0;
 	virtual const char* getMethodName() const = 0;
-	int getCounter() const{ return counter; }
+	int getCounter() const { return counter; }
 	void newIteration() { ++counter; }
 };
 
@@ -45,9 +44,10 @@ class  FletcherRivs :public Optimization {
 	vector<double> p;
 public:
 	virtual const char* getMethodName() const;
-	const double findBorderAlpha(const vector<double>& x, Area& D)const;
-	virtual vector<double> minimize(vector<double> x, std::shared_ptr<Function> f, Area& D, Criterion& c) override;
-	double calculateArgmin(vector<double> x, Function& f, Area& D, double)const;
+	const double findBorderAlpha(const vector<double>& x, Area& D) const;
+	virtual vector<double> minimize(vector<double> x, Function& f,
+		Criterion& c) override;
+	double calculateArgmin(vector<double> x, Function& f, double) const;
 };
 
 /**
@@ -55,16 +55,18 @@ public:
 */
 class RandomSearch : public Optimization {
 	int stopIfnoChange;
-	double p;//дл€ бернулли
-	double radius;//начальный радиус. мб вычисл€ть в зависимости от D
-	double radiusChange;//измен€юща€с€ эпсилон при попадании в один и тот же шар
-	double change;//множитель изменени€ радиуса
+	double p;
+	double radius;
+	double radiusChange;
+	double change;
 	vector<double> simulateUniformInD(Area& D);
 public:
-	RandomSearch(Area& D,double probability = 0.8, int whenStop = 1000, double whatChange = 0.9);
+	RandomSearch(Area& D, double probability = 0.8, int whenStop = 1000,
+		double whatChange = 0.9);
 	double initializeRadius(Area& D) const;
 	virtual const char* getMethodName() const;
-	virtual vector<double> minimize(vector<double> x, std::shared_ptr<Function> f, Area& D, Criterion& c) override;
+	virtual vector<double> minimize(vector<double> x, Function& f,
+		Criterion& c) override;
 };
 
 

@@ -11,18 +11,18 @@ Abstract class for solve the problem of multidimensional optimization.
 
 
 
-Inherited by \hyperlink{class_fletcher___rivs}{Fletcher\+\_\+\+Rivs}, and \hyperlink{class_random___search}{Random\+\_\+\+Search}.
+Inherited by \hyperlink{class_fletcher_rivs}{Fletcher\+Rivs}, and \hyperlink{class_random_search}{Random\+Search}.
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual vector$<$ double $>$ \hyperlink{class_optimization_afbcc2bddcaf625671385b2e2d77fc038}{minimize} (vector$<$ double $>$ x, \hyperlink{class_function}{Function} \&f, \hyperlink{class_area}{Area} \&D, \hyperlink{class_criterion}{Criterion} \&c1, \hyperlink{class_criterion}{Criterion} \&c2)=0
+virtual vector$<$ double $>$ \hyperlink{class_optimization_af24d30a738749916977a13f0d2e7fb5f}{minimize} (vector$<$ double $>$ x, \hyperlink{class_function}{Function} \&f, \hyperlink{class_criterion}{Criterion} \&c)=0
 \begin{DoxyCompactList}\small\item\em It finds a minimum point with given parameters. \end{DoxyCompactList}\item 
-virtual const char $\ast$ \hyperlink{class_optimization_a7d4cf7e7c0d0726822e6e29adecbd252}{get\+\_\+method\+\_\+name} () const =0
+virtual const char $\ast$ \hyperlink{class_optimization_af96548088d418478485c1be6ee73905d}{get\+Method\+Name} () const =0
 \item 
-int \hyperlink{class_optimization_a248956fcbe43e3766423f287553c2c6f}{get\+\_\+counter} () const
+int \hyperlink{class_optimization_aebd73fb9765b4f78f0b5e96f3bde796f}{get\+Counter} () const
 \item 
-void \hyperlink{class_optimization_abafd547d745bc790f7f1ca91097f4257}{newiteration} ()
+void \hyperlink{class_optimization_ae65912bf7bd893c28405ee82a38fdba6}{new\+Iteration} ()
 \end{DoxyCompactItemize}
 
 
@@ -30,27 +30,27 @@ void \hyperlink{class_optimization_abafd547d745bc790f7f1ca91097f4257}{newiterati
 Abstract class for solve the problem of multidimensional optimization. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_optimization_a248956fcbe43e3766423f287553c2c6f}\label{class_optimization_a248956fcbe43e3766423f287553c2c6f}} 
-\index{Optimization@{Optimization}!get\+\_\+counter@{get\+\_\+counter}}
-\index{get\+\_\+counter@{get\+\_\+counter}!Optimization@{Optimization}}
-\subsubsection{\texorpdfstring{get\+\_\+counter()}{get\_counter()}}
-{\footnotesize\ttfamily int Optimization\+::get\+\_\+counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_optimization_aebd73fb9765b4f78f0b5e96f3bde796f}\label{class_optimization_aebd73fb9765b4f78f0b5e96f3bde796f}} 
+\index{Optimization@{Optimization}!get\+Counter@{get\+Counter}}
+\index{get\+Counter@{get\+Counter}!Optimization@{Optimization}}
+\subsubsection{\texorpdfstring{get\+Counter()}{getCounter()}}
+{\footnotesize\ttfamily int Optimization\+::get\+Counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_optimization_a7d4cf7e7c0d0726822e6e29adecbd252}\label{class_optimization_a7d4cf7e7c0d0726822e6e29adecbd252}} 
-\index{Optimization@{Optimization}!get\+\_\+method\+\_\+name@{get\+\_\+method\+\_\+name}}
-\index{get\+\_\+method\+\_\+name@{get\+\_\+method\+\_\+name}!Optimization@{Optimization}}
-\subsubsection{\texorpdfstring{get\+\_\+method\+\_\+name()}{get\_method\_name()}}
-{\footnotesize\ttfamily virtual const char$\ast$ Optimization\+::get\+\_\+method\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\mbox{\Hypertarget{class_optimization_af96548088d418478485c1be6ee73905d}\label{class_optimization_af96548088d418478485c1be6ee73905d}} 
+\index{Optimization@{Optimization}!get\+Method\+Name@{get\+Method\+Name}}
+\index{get\+Method\+Name@{get\+Method\+Name}!Optimization@{Optimization}}
+\subsubsection{\texorpdfstring{get\+Method\+Name()}{getMethodName()}}
+{\footnotesize\ttfamily virtual const char$\ast$ Optimization\+::get\+Method\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \hyperlink{class_random___search_a4ba44714765f2835a63765d8ac62dc35}{Random\+\_\+\+Search}, and \hyperlink{class_fletcher___rivs_a2aa5d90c6c4ac0773533adb4ec7c9038}{Fletcher\+\_\+\+Rivs}.
+Implemented in \hyperlink{class_random_search_a84278cf5d586b2576c38d3b7f274d9c1}{Random\+Search}, and \hyperlink{class_fletcher_rivs_af73e7eb858fdfb37d30b97bfb38ef01e}{Fletcher\+Rivs}.
 
-\mbox{\Hypertarget{class_optimization_afbcc2bddcaf625671385b2e2d77fc038}\label{class_optimization_afbcc2bddcaf625671385b2e2d77fc038}} 
+\mbox{\Hypertarget{class_optimization_af24d30a738749916977a13f0d2e7fb5f}\label{class_optimization_af24d30a738749916977a13f0d2e7fb5f}} 
 \index{Optimization@{Optimization}!minimize@{minimize}}
 \index{minimize@{minimize}!Optimization@{Optimization}}
 \subsubsection{\texorpdfstring{minimize()}{minimize()}}
-{\footnotesize\ttfamily virtual vector$<$double$>$ Optimization\+::minimize (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{x,  }\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{\hyperlink{class_area}{Area} \&}]{D,  }\item[{\hyperlink{class_criterion}{Criterion} \&}]{c1,  }\item[{\hyperlink{class_criterion}{Criterion} \&}]{c2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual vector$<$double$>$ Optimization\+::minimize (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{x,  }\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{\hyperlink{class_criterion}{Criterion} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -62,25 +62,21 @@ It finds a minimum point with given parameters.
 \hline
 \mbox{\tt in}  & {\em f} & objective function \\
 \hline
-\mbox{\tt in}  & {\em D} & area of minimization \\
-\hline
-\mbox{\tt in}  & {\em c1} & break criterion1 \\
-\hline
-\mbox{\tt in}  & {\em c2} & break criterion2 \\
+\mbox{\tt in}  & {\em c1} & break criterion \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-approximation of the vector x on which the objective function reaches a local minimum 
+approximation of the vector x on which the objective function reaches a minimum 
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{class_random___search_a14fb417ae9e7f3597e5590de599e3846}{Random\+\_\+\+Search}, and \hyperlink{class_fletcher___rivs_a65fe40d186bda0e0a4de8a75aaac01e8}{Fletcher\+\_\+\+Rivs}.
+Implemented in \hyperlink{class_random_search_af3a56e45c9e8922d9d7809ce3b075391}{Random\+Search}, and \hyperlink{class_fletcher_rivs_a2bf6706dae306522d3c748503385d98e}{Fletcher\+Rivs}.
 
-\mbox{\Hypertarget{class_optimization_abafd547d745bc790f7f1ca91097f4257}\label{class_optimization_abafd547d745bc790f7f1ca91097f4257}} 
-\index{Optimization@{Optimization}!newiteration@{newiteration}}
-\index{newiteration@{newiteration}!Optimization@{Optimization}}
-\subsubsection{\texorpdfstring{newiteration()}{newiteration()}}
-{\footnotesize\ttfamily void Optimization\+::newiteration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_optimization_ae65912bf7bd893c28405ee82a38fdba6}\label{class_optimization_ae65912bf7bd893c28405ee82a38fdba6}} 
+\index{Optimization@{Optimization}!new\+Iteration@{new\+Iteration}}
+\index{new\+Iteration@{new\+Iteration}!Optimization@{Optimization}}
+\subsubsection{\texorpdfstring{new\+Iteration()}{newIteration()}}
+{\footnotesize\ttfamily void Optimization\+::new\+Iteration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

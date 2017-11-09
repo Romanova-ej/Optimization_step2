@@ -2,16 +2,12 @@
 \label{class_area}\index{Area@{Area}}
 
 
-Abstract base class for areas (parallelepiped) on which the minimum is sought.  
+class for areas (parallelepiped) on which the minimum is sought  
 
 
 
 
 {\ttfamily \#include $<$H\+Area.\+h$>$}
-
-
-
-Inherited by \hyperlink{class_area__dim2}{Area\+\_\+dim2}, and \hyperlink{class_area__dim4}{Area\+\_\+dim4}.
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -20,18 +16,18 @@ Inherited by \hyperlink{class_area__dim2}{Area\+\_\+dim2}, and \hyperlink{class_
 \item 
 \hyperlink{class_area_aa92851fcffb0a9f1c6c8c283204f7003}{Area} ()
 \item 
-void \hyperlink{class_area_a0ba2b25e1d74f7e64d433f0c8318d497}{set\+\_\+area} (const vector$<$ double $>$ \&l, const vector$<$ double $>$ \&r)
+void \hyperlink{class_area_ad1807b8ed5bb2e91a910b7f822fc5f27}{set\+Area} (const vector$<$ double $>$ \&l, const vector$<$ double $>$ \&r)
 \item 
-const int \hyperlink{class_area_a1b288955abef67d9598b7321e8219ae8}{get\+\_\+dim} () const
+const int \hyperlink{class_area_a3f323d5ea2bb19a1a48e9462a9542ff4}{get\+Dim} () const
 \item 
-const vector$<$ double $>$ \hyperlink{class_area_af693a7f72a81522c495e5eef4296b6a9}{get\+\_\+left} () const
+const vector$<$ double $>$ \hyperlink{class_area_a785a940f36dc9fcecde27c7ccf11f297}{get\+Left} () const
 \item 
-const vector$<$ double $>$ \hyperlink{class_area_a4bdaf9dc0d21b0798d068e759c77a134}{get\+\_\+right} () const
+const vector$<$ double $>$ \hyperlink{class_area_a9579ee04ce26f73eb35be4a03037972b}{get\+Right} () const
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Abstract base class for areas (parallelepiped) on which the minimum is sought. 
+class for areas (parallelepiped) on which the minimum is sought 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_area_ab59b0c1700cfeedcc20e59f70a6a3ee8}\label{class_area_ab59b0c1700cfeedcc20e59f70a6a3ee8}} 
@@ -49,29 +45,29 @@ Abstract base class for areas (parallelepiped) on which the minimum is sought.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_area_a1b288955abef67d9598b7321e8219ae8}\label{class_area_a1b288955abef67d9598b7321e8219ae8}} 
-\index{Area@{Area}!get\+\_\+dim@{get\+\_\+dim}}
-\index{get\+\_\+dim@{get\+\_\+dim}!Area@{Area}}
-\subsubsection{\texorpdfstring{get\+\_\+dim()}{get\_dim()}}
-{\footnotesize\ttfamily const int Area\+::get\+\_\+dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+\mbox{\Hypertarget{class_area_a3f323d5ea2bb19a1a48e9462a9542ff4}\label{class_area_a3f323d5ea2bb19a1a48e9462a9542ff4}} 
+\index{Area@{Area}!get\+Dim@{get\+Dim}}
+\index{get\+Dim@{get\+Dim}!Area@{Area}}
+\subsubsection{\texorpdfstring{get\+Dim()}{getDim()}}
+{\footnotesize\ttfamily const int Area\+::get\+Dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_area_af693a7f72a81522c495e5eef4296b6a9}\label{class_area_af693a7f72a81522c495e5eef4296b6a9}} 
-\index{Area@{Area}!get\+\_\+left@{get\+\_\+left}}
-\index{get\+\_\+left@{get\+\_\+left}!Area@{Area}}
-\subsubsection{\texorpdfstring{get\+\_\+left()}{get\_left()}}
-{\footnotesize\ttfamily const vector$<$ double $>$ Area\+::get\+\_\+left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+\mbox{\Hypertarget{class_area_a785a940f36dc9fcecde27c7ccf11f297}\label{class_area_a785a940f36dc9fcecde27c7ccf11f297}} 
+\index{Area@{Area}!get\+Left@{get\+Left}}
+\index{get\+Left@{get\+Left}!Area@{Area}}
+\subsubsection{\texorpdfstring{get\+Left()}{getLeft()}}
+{\footnotesize\ttfamily const vector$<$ double $>$ Area\+::get\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_area_a4bdaf9dc0d21b0798d068e759c77a134}\label{class_area_a4bdaf9dc0d21b0798d068e759c77a134}} 
-\index{Area@{Area}!get\+\_\+right@{get\+\_\+right}}
-\index{get\+\_\+right@{get\+\_\+right}!Area@{Area}}
-\subsubsection{\texorpdfstring{get\+\_\+right()}{get\_right()}}
-{\footnotesize\ttfamily const vector$<$ double $>$ Area\+::get\+\_\+right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+\mbox{\Hypertarget{class_area_a9579ee04ce26f73eb35be4a03037972b}\label{class_area_a9579ee04ce26f73eb35be4a03037972b}} 
+\index{Area@{Area}!get\+Right@{get\+Right}}
+\index{get\+Right@{get\+Right}!Area@{Area}}
+\subsubsection{\texorpdfstring{get\+Right()}{getRight()}}
+{\footnotesize\ttfamily const vector$<$ double $>$ Area\+::get\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_area_a0ba2b25e1d74f7e64d433f0c8318d497}\label{class_area_a0ba2b25e1d74f7e64d433f0c8318d497}} 
-\index{Area@{Area}!set\+\_\+area@{set\+\_\+area}}
-\index{set\+\_\+area@{set\+\_\+area}!Area@{Area}}
-\subsubsection{\texorpdfstring{set\+\_\+area()}{set\_area()}}
-{\footnotesize\ttfamily void Area\+::set\+\_\+area (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{l,  }\item[{const vector$<$ double $>$ \&}]{r }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_area_ad1807b8ed5bb2e91a910b7f822fc5f27}\label{class_area_ad1807b8ed5bb2e91a910b7f822fc5f27}} 
+\index{Area@{Area}!set\+Area@{set\+Area}}
+\index{set\+Area@{set\+Area}!Area@{Area}}
+\subsubsection{\texorpdfstring{set\+Area()}{setArea()}}
+{\footnotesize\ttfamily void Area\+::set\+Area (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{l,  }\item[{const vector$<$ double $>$ \&}]{r }\end{DoxyParamCaption})}
 
 
 

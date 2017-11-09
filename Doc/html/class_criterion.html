@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Multidimensional_optimization: Criterion Class Reference</title>
+<title>Multidimensional optimization: Criterion Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,7 +34,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Multidimensional_optimization
+   <div id="projectname">Multidimensional optimization
    </div>
   </td>
  </tr>
@@ -98,22 +98,24 @@ $(document).ready(function(){initNavTree('class_criterion.html','');});
 
 <p><code>#include &lt;<a class="el" href="_h_criterion_8h_source.html">HCriterion.h</a>&gt;</code></p>
 
-<p>Inherited by <a class="el" href="class_criterion__dif__of__f.html">Criterion_dif_of_f</a>, <a class="el" href="class_criterion__grad__norm.html">Criterion_grad_norm</a>, <a class="el" href="class_criterion__num__of__iteration.html">Criterion_num_of_iteration</a>, <a class="el" href="class_criterion__num__of__nochange__iteration.html">Criterion_num_of_nochange_iteration</a>, and <a class="el" href="class_criterion__one__dim__norm.html">Criterion_one_dim_norm</a>.</p>
+<p>Inherited by <a class="el" href="class_criterion_difference_of_valuef.html">CriterionDifferenceOfValuef</a>, <a class="el" href="class_criterion_grad_norm.html">CriterionGradNorm</a>, <a class="el" href="class_criterion_num_of_iteration.html">CriterionNumOfIteration</a>, <a class="el" href="class_criterion_num_of_nochange_iteration.html">CriterionNumOfNochangeIteration</a>, and <a class="el" href="class_criterion_one_dim_norm.html">CriterionOneDimNorm</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa0bb13b321141cb530b259e190606f81"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_criterion.html#aa0bb13b321141cb530b259e190606f81">get_eps</a> () const</td></tr>
-<tr class="separator:aa0bb13b321141cb530b259e190606f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe28663dd86d473ed813aaf7550bfa04"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_criterion.html#afe28663dd86d473ed813aaf7550bfa04">Criterion</a> (double epsilon)</td></tr>
-<tr class="separator:afe28663dd86d473ed813aaf7550bfa04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d04f36050bb555469cea3e9a2f7b6f0"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_criterion.html#a1d04f36050bb555469cea3e9a2f7b6f0">getEps</a> () const</td></tr>
+<tr class="separator:a1d04f36050bb555469cea3e9a2f7b6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a579d93bfa87d36a3ae64a39fe3c2d172"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_criterion.html#a579d93bfa87d36a3ae64a39fe3c2d172">stopIfMoreIteration</a> (int nIteration) const</td></tr>
+<tr class="separator:a579d93bfa87d36a3ae64a39fe3c2d172"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a393fa31a40959a1951ab5cfa2fd84be5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_criterion.html#a393fa31a40959a1951ab5cfa2fd84be5">Criterion</a> (double epsilon, int stopId)</td></tr>
+<tr class="separator:a393fa31a40959a1951ab5cfa2fd84be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee3e2148c665c72c50c2f870a3ca8cdc"><td class="memItemLeft" align="right" valign="top">virtual const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_criterion.html#aee3e2148c665c72c50c2f870a3ca8cdc">stop</a> (vector&lt; double &gt;, const vector&lt; double &gt; &amp;, <a class="el" href="class_function.html">Function</a> &amp;, int, int=0) const =0</td></tr>
 <tr class="separator:aee3e2148c665c72c50c2f870a3ca8cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for various criteria for stopping iterative methods Class objects are determined by the accuracy of eps. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afe28663dd86d473ed813aaf7550bfa04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe28663dd86d473ed813aaf7550bfa04">&#9670;&nbsp;</a></span>Criterion()</h2>
+<a id="a393fa31a40959a1951ab5cfa2fd84be5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a393fa31a40959a1951ab5cfa2fd84be5">&#9670;&nbsp;</a></span>Criterion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,8 +127,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">Criterion::Criterion </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>epsilon</em></td><td>)</td>
+          <td class="paramname"><em>epsilon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stopId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -139,8 +151,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa0bb13b321141cb530b259e190606f81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0bb13b321141cb530b259e190606f81">&#9670;&nbsp;</a></span>get_eps()</h2>
+<a id="a1d04f36050bb555469cea3e9a2f7b6f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d04f36050bb555469cea3e9a2f7b6f0">&#9670;&nbsp;</a></span>getEps()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -149,7 +161,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const double Criterion::get_eps </td>
+          <td class="memname">const double Criterion::getEps </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -216,7 +228,25 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_criterion__one__dim__norm.html#a7270d8ca17d8f810b4a270ad604be8bd">Criterion_one_dim_norm</a>, <a class="el" href="class_criterion__dif__of__f.html#a0bea2c48766a1db63ec9d3ba7cf08767">Criterion_dif_of_f</a>, <a class="el" href="class_criterion__num__of__nochange__iteration.html#a7ced10cb8ce2f4979ae0d25287d91a40">Criterion_num_of_nochange_iteration</a>, <a class="el" href="class_criterion__num__of__iteration.html#a6566342d95827d9350485498c6c4eba6">Criterion_num_of_iteration</a>, and <a class="el" href="class_criterion__grad__norm.html#ae95aa823069c1fcbcd333eacd00f78c9">Criterion_grad_norm</a>.</p>
+<p>Implemented in <a class="el" href="class_criterion_one_dim_norm.html#a34169be5a51a1146f087858cc9716be7">CriterionOneDimNorm</a>, <a class="el" href="class_criterion_difference_of_valuef.html#afd9664b09456be745efd44d1577d26b1">CriterionDifferenceOfValuef</a>, <a class="el" href="class_criterion_num_of_nochange_iteration.html#a4d46c7bfa8d1e31171d11c77a96e91ed">CriterionNumOfNochangeIteration</a>, <a class="el" href="class_criterion_num_of_iteration.html#a9885d8e39da442c5ac1049e0546ffdfd">CriterionNumOfIteration</a>, and <a class="el" href="class_criterion_grad_norm.html#aa482b08006d20c4aac09c0322feb3d6e">CriterionGradNorm</a>.</p>
+
+</div>
+</div>
+<a id="a579d93bfa87d36a3ae64a39fe3c2d172"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a579d93bfa87d36a3ae64a39fe3c2d172">&#9670;&nbsp;</a></span>stopIfMoreIteration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool Criterion::stopIfMoreIteration </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nIteration</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

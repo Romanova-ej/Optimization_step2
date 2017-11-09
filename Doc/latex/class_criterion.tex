@@ -11,14 +11,16 @@ Abstract base class for various criteria for stopping iterative methods Class ob
 
 
 
-Inherited by \hyperlink{class_criterion__dif__of__f}{Criterion\+\_\+dif\+\_\+of\+\_\+f}, \hyperlink{class_criterion__grad__norm}{Criterion\+\_\+grad\+\_\+norm}, \hyperlink{class_criterion__num__of__iteration}{Criterion\+\_\+num\+\_\+of\+\_\+iteration}, \hyperlink{class_criterion__num__of__nochange__iteration}{Criterion\+\_\+num\+\_\+of\+\_\+nochange\+\_\+iteration}, and \hyperlink{class_criterion__one__dim__norm}{Criterion\+\_\+one\+\_\+dim\+\_\+norm}.
+Inherited by \hyperlink{class_criterion_difference_of_valuef}{Criterion\+Difference\+Of\+Valuef}, \hyperlink{class_criterion_grad_norm}{Criterion\+Grad\+Norm}, \hyperlink{class_criterion_num_of_iteration}{Criterion\+Num\+Of\+Iteration}, \hyperlink{class_criterion_num_of_nochange_iteration}{Criterion\+Num\+Of\+Nochange\+Iteration}, and \hyperlink{class_criterion_one_dim_norm}{Criterion\+One\+Dim\+Norm}.
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-const double \hyperlink{class_criterion_aa0bb13b321141cb530b259e190606f81}{get\+\_\+eps} () const
+const double \hyperlink{class_criterion_a1d04f36050bb555469cea3e9a2f7b6f0}{get\+Eps} () const
 \item 
-\hyperlink{class_criterion_afe28663dd86d473ed813aaf7550bfa04}{Criterion} (double epsilon)
+const bool \hyperlink{class_criterion_a579d93bfa87d36a3ae64a39fe3c2d172}{stop\+If\+More\+Iteration} (int n\+Iteration) const
+\item 
+\hyperlink{class_criterion_a393fa31a40959a1951ab5cfa2fd84be5}{Criterion} (double epsilon, int stop\+Id)
 \item 
 virtual const bool \hyperlink{class_criterion_aee3e2148c665c72c50c2f870a3ca8cdc}{stop} (vector$<$ double $>$, const vector$<$ double $>$ \&, \hyperlink{class_function}{Function} \&, int, int=0) const =0
 \end{DoxyCompactItemize}
@@ -28,20 +30,20 @@ virtual const bool \hyperlink{class_criterion_aee3e2148c665c72c50c2f870a3ca8cdc}
 Abstract base class for various criteria for stopping iterative methods Class objects are determined by the accuracy of eps. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_criterion_afe28663dd86d473ed813aaf7550bfa04}\label{class_criterion_afe28663dd86d473ed813aaf7550bfa04}} 
+\mbox{\Hypertarget{class_criterion_a393fa31a40959a1951ab5cfa2fd84be5}\label{class_criterion_a393fa31a40959a1951ab5cfa2fd84be5}} 
 \index{Criterion@{Criterion}!Criterion@{Criterion}}
 \index{Criterion@{Criterion}!Criterion@{Criterion}}
 \subsubsection{\texorpdfstring{Criterion()}{Criterion()}}
-{\footnotesize\ttfamily Criterion\+::\+Criterion (\begin{DoxyParamCaption}\item[{double}]{epsilon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Criterion\+::\+Criterion (\begin{DoxyParamCaption}\item[{double}]{epsilon,  }\item[{int}]{stop\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_criterion_aa0bb13b321141cb530b259e190606f81}\label{class_criterion_aa0bb13b321141cb530b259e190606f81}} 
-\index{Criterion@{Criterion}!get\+\_\+eps@{get\+\_\+eps}}
-\index{get\+\_\+eps@{get\+\_\+eps}!Criterion@{Criterion}}
-\subsubsection{\texorpdfstring{get\+\_\+eps()}{get\_eps()}}
-{\footnotesize\ttfamily const double Criterion\+::get\+\_\+eps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_criterion_a1d04f36050bb555469cea3e9a2f7b6f0}\label{class_criterion_a1d04f36050bb555469cea3e9a2f7b6f0}} 
+\index{Criterion@{Criterion}!get\+Eps@{get\+Eps}}
+\index{get\+Eps@{get\+Eps}!Criterion@{Criterion}}
+\subsubsection{\texorpdfstring{get\+Eps()}{getEps()}}
+{\footnotesize\ttfamily const double Criterion\+::get\+Eps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_criterion_aee3e2148c665c72c50c2f870a3ca8cdc}\label{class_criterion_aee3e2148c665c72c50c2f870a3ca8cdc}} 
 \index{Criterion@{Criterion}!stop@{stop}}
@@ -51,7 +53,13 @@ Abstract base class for various criteria for stopping iterative methods Class ob
 
 
 
-Implemented in \hyperlink{class_criterion__one__dim__norm_a7270d8ca17d8f810b4a270ad604be8bd}{Criterion\+\_\+one\+\_\+dim\+\_\+norm}, \hyperlink{class_criterion__dif__of__f_a0bea2c48766a1db63ec9d3ba7cf08767}{Criterion\+\_\+dif\+\_\+of\+\_\+f}, \hyperlink{class_criterion__num__of__nochange__iteration_a7ced10cb8ce2f4979ae0d25287d91a40}{Criterion\+\_\+num\+\_\+of\+\_\+nochange\+\_\+iteration}, \hyperlink{class_criterion__num__of__iteration_a6566342d95827d9350485498c6c4eba6}{Criterion\+\_\+num\+\_\+of\+\_\+iteration}, and \hyperlink{class_criterion__grad__norm_ae95aa823069c1fcbcd333eacd00f78c9}{Criterion\+\_\+grad\+\_\+norm}.
+Implemented in \hyperlink{class_criterion_one_dim_norm_a34169be5a51a1146f087858cc9716be7}{Criterion\+One\+Dim\+Norm}, \hyperlink{class_criterion_difference_of_valuef_afd9664b09456be745efd44d1577d26b1}{Criterion\+Difference\+Of\+Valuef}, \hyperlink{class_criterion_num_of_nochange_iteration_a4d46c7bfa8d1e31171d11c77a96e91ed}{Criterion\+Num\+Of\+Nochange\+Iteration}, \hyperlink{class_criterion_num_of_iteration_a9885d8e39da442c5ac1049e0546ffdfd}{Criterion\+Num\+Of\+Iteration}, and \hyperlink{class_criterion_grad_norm_aa482b08006d20c4aac09c0322feb3d6e}{Criterion\+Grad\+Norm}.
+
+\mbox{\Hypertarget{class_criterion_a579d93bfa87d36a3ae64a39fe3c2d172}\label{class_criterion_a579d93bfa87d36a3ae64a39fe3c2d172}} 
+\index{Criterion@{Criterion}!stop\+If\+More\+Iteration@{stop\+If\+More\+Iteration}}
+\index{stop\+If\+More\+Iteration@{stop\+If\+More\+Iteration}!Criterion@{Criterion}}
+\subsubsection{\texorpdfstring{stop\+If\+More\+Iteration()}{stopIfMoreIteration()}}
+{\footnotesize\ttfamily const bool Criterion\+::stop\+If\+More\+Iteration (\begin{DoxyParamCaption}\item[{int}]{n\+Iteration }\end{DoxyParamCaption}) const}
 
 
 

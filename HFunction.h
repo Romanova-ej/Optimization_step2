@@ -32,8 +32,7 @@ public:
 	virtual const  double f(const vector<double>&) const = 0;
 	~Function();
 	virtual const char* getFunctionName() const = 0;
-	//Function& operator=(Function &g) {};
-	
+
 	/**
 	\brief It calculates numerically the gradient at the point x of a function, or exactly if the gradient is explicitly defined in the derived class
 	\param[in] x vector
@@ -44,7 +43,7 @@ public:
 
 	/**
 	\brief It calculates the numerically derivative of the objective function at the point x in a given direction
-	\param[in] x vector-point 
+	\param[in] x vector-point
 	\param[in] p directing vector
 	*/
 	double getDirectionalDerivative(const vector<double>& x, const vector<double>&p) const;
@@ -72,7 +71,7 @@ public:
 };
 
 /**
-\brief Quadratic function of four variables
+\brief Quadratic Function of four variables
 */
 class Fun2 :public Function {
 public:
@@ -84,7 +83,7 @@ public:
 };
 
 /**
-\brief Quadratic function of two variables
+\brief Quadratic Function of two variables
 */
 class Fun3 :public Function {
 public:
@@ -97,7 +96,7 @@ public:
 /**
 \brief  Function of two variables
 */
-class Fun4 :public Function {// решения: x=(1,1),  f=0;
+class Fun4 :public Function {//x=(1,1),  f=0;
 public:
 	Fun4();
 	Fun4(const Area& d);
@@ -108,7 +107,7 @@ public:
 /**
 \brief  Function of four variables
 */
-class Fun5 :public Function {// решения: (0,0,0,0)  0
+class Fun5 :public Function {//x=(0,0,0,0), f=0
 public:
 	Fun5();
 	Fun5(const Area& d);

@@ -1,7 +1,7 @@
 var class_optimization =
 [
-    [ "get_counter", "class_optimization.html#a248956fcbe43e3766423f287553c2c6f", null ],
-    [ "get_method_name", "class_optimization.html#a7d4cf7e7c0d0726822e6e29adecbd252", null ],
-    [ "minimize", "class_optimization.html#afbcc2bddcaf625671385b2e2d77fc038", null ],
-    [ "newiteration", "class_optimization.html#abafd547d745bc790f7f1ca91097f4257", null ]
+    [ "getCounter", "class_optimization.html#aebd73fb9765b4f78f0b5e96f3bde796f", null ],
+    [ "getMethodName", "class_optimization.html#af96548088d418478485c1be6ee73905d", null ],
+    [ "minimize", "class_optimization.html#af24d30a738749916977a13f0d2e7fb5f", null ],
+    [ "newIteration", "class_optimization.html#ae65912bf7bd893c28405ee82a38fdba6", null ]
 ];

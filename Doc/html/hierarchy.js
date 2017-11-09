@@ -1,25 +1,22 @@
 var hierarchy =
 [
-    [ "Area", "class_area.html", [
-      [ "Area_dim2", "class_area__dim2.html", null ],
-      [ "Area_dim4", "class_area__dim4.html", null ]
-    ] ],
+    [ "Area", "class_area.html", null ],
     [ "Criterion", "class_criterion.html", [
-      [ "Criterion_dif_of_f", "class_criterion__dif__of__f.html", null ],
-      [ "Criterion_grad_norm", "class_criterion__grad__norm.html", null ],
-      [ "Criterion_num_of_iteration", "class_criterion__num__of__iteration.html", null ],
-      [ "Criterion_num_of_nochange_iteration", "class_criterion__num__of__nochange__iteration.html", null ],
-      [ "Criterion_one_dim_norm", "class_criterion__one__dim__norm.html", null ]
+      [ "CriterionDifferenceOfValuef", "class_criterion_difference_of_valuef.html", null ],
+      [ "CriterionGradNorm", "class_criterion_grad_norm.html", null ],
+      [ "CriterionNumOfIteration", "class_criterion_num_of_iteration.html", null ],
+      [ "CriterionNumOfNochangeIteration", "class_criterion_num_of_nochange_iteration.html", null ],
+      [ "CriterionOneDimNorm", "class_criterion_one_dim_norm.html", null ]
     ] ],
     [ "Function", "class_function.html", [
-      [ "fun1", "classfun1.html", null ],
-      [ "fun2", "classfun2.html", null ],
-      [ "fun3", "classfun3.html", null ],
-      [ "fun4", "classfun4.html", null ],
-      [ "fun5", "classfun5.html", null ]
+      [ "Fun1", "class_fun1.html", null ],
+      [ "Fun2", "class_fun2.html", null ],
+      [ "Fun3", "class_fun3.html", null ],
+      [ "Fun4", "class_fun4.html", null ],
+      [ "Fun5", "class_fun5.html", null ]
     ] ],
     [ "Optimization", "class_optimization.html", [
-      [ "Fletcher_Rivs", "class_fletcher___rivs.html", null ],
-      [ "Random_Search", "class_random___search.html", null ]
+      [ "FletcherRivs", "class_fletcher_rivs.html", null ],
+      [ "RandomSearch", "class_random_search.html", null ]
     ] ]
 ];

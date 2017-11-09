@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['f',['f',['../class_function.html#ae700c7cb44bd2048d712466767be2803',1,'Function::f()'],['../classfun1.html#afc5f6c5f842b59be98115c23864ccce5',1,'fun1::f()'],['../classfun2.html#a8c363f61d3161648813004cfc341cbd1',1,'fun2::f()'],['../classfun3.html#a6c801db638950a09e1ee4e5199ce511b',1,'fun3::f()'],['../classfun4.html#a3b693cb223f26fb733381d601751eb5c',1,'fun4::f()'],['../classfun5.html#a8b68e41838f1055f14f1f5bd317fc84d',1,'fun5::f()']]],
-  ['find_5fborder_5falpha',['find_border_alpha',['../class_fletcher___rivs.html#a2d42dcde66a34d8199d4d2a8e7c6805e',1,'Fletcher_Rivs']]],
-  ['fun1',['fun1',['../classfun1.html#a86a79c6b6b5df6c5183f230ef871010c',1,'fun1']]],
-  ['fun2',['fun2',['../classfun2.html#a6b8bfe183aa29e73d5abdab7d9f14cb3',1,'fun2']]],
-  ['fun3',['fun3',['../classfun3.html#a5fbc8d16f500fdc6168219b29a289350',1,'fun3']]],
-  ['fun4',['fun4',['../classfun4.html#a2161456b84376ff65bb7ceafde2adb3d',1,'fun4']]],
-  ['fun5',['fun5',['../classfun5.html#af093fbe516b74b6042b238a469da71d9',1,'fun5']]]
+  ['getarea',['getArea',['../class_function.html#a8407865d197005fb990c87f83fd020b0',1,'Function']]],
+  ['getcounter',['getCounter',['../class_optimization.html#aebd73fb9765b4f78f0b5e96f3bde796f',1,'Optimization']]],
+  ['getdim',['getDim',['../class_area.html#a3f323d5ea2bb19a1a48e9462a9542ff4',1,'Area::getDim()'],['../class_function.html#a6d8e35610e59d11da7c21da19b061bac',1,'Function::getDim()']]],
+  ['getdirectionalderivative',['getDirectionalDerivative',['../class_function.html#af463683db78c587160ca6040083f3deb',1,'Function']]],
+  ['geteps',['getEps',['../class_criterion.html#a1d04f36050bb555469cea3e9a2f7b6f0',1,'Criterion']]],
+  ['getfunctionname',['getFunctionName',['../class_function.html#ab19392e324813377fc6171bf354c24fb',1,'Function::getFunctionName()'],['../class_fun1.html#a94ea2bb4448ebe03753de16d07784ea8',1,'Fun1::getFunctionName()'],['../class_fun2.html#ac5702f1a8350b7a7f4b796b99cd5b08f',1,'Fun2::getFunctionName()'],['../class_fun3.html#a512d64bca04226bb354d8a7505794277',1,'Fun3::getFunctionName()'],['../class_fun4.html#a7d4a9da6240876674244784c79184772',1,'Fun4::getFunctionName()'],['../class_fun5.html#acaa887c03e39c037f49205b3b20b7464',1,'Fun5::getFunctionName()']]],
+  ['getgradient',['getGradient',['../class_function.html#a9f2d70a7cf5875661a0f3b0e115dedc2',1,'Function::getGradient()'],['../class_fun2.html#adf2435fbf6e848c1ffa2a2287b489a45',1,'Fun2::getGradient()']]],
+  ['getleft',['getLeft',['../class_area.html#a785a940f36dc9fcecde27c7ccf11f297',1,'Area']]],
+  ['getmethodname',['getMethodName',['../class_optimization.html#af96548088d418478485c1be6ee73905d',1,'Optimization::getMethodName()'],['../class_fletcher_rivs.html#af73e7eb858fdfb37d30b97bfb38ef01e',1,'FletcherRivs::getMethodName()'],['../class_random_search.html#a84278cf5d586b2576c38d3b7f274d9c1',1,'RandomSearch::getMethodName()']]],
+  ['getright',['getRight',['../class_area.html#a9579ee04ce26f73eb35be4a03037972b',1,'Area']]]
 ];

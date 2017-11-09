@@ -11,26 +11,41 @@ Abstract base class for a multidimensional functions and information about it.
 
 
 
-Inherited by \hyperlink{classfun1}{fun1}, \hyperlink{classfun2}{fun2}, \hyperlink{classfun3}{fun3}, \hyperlink{classfun4}{fun4}, and \hyperlink{classfun5}{fun5}.
+Inherited by \hyperlink{class_fun1}{Fun1}, \hyperlink{class_fun2}{Fun2}, \hyperlink{class_fun3}{Fun3}, \hyperlink{class_fun4}{Fun4}, and \hyperlink{class_fun5}{Fun5}.
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_function_a62de0ce683667593f68559566e35726f}{set\+\_\+dim} (const int)
+\hyperlink{class_function_a7055e57520effff828782ea44498c3e3}{Function} (const \hyperlink{class_area}{Area} \&d)
 \item 
-int const \hyperlink{class_function_ab822c64ba8beb7fd17e8b1a38b8ff9ca}{get\+\_\+dim} () const
+\hyperlink{class_function_ae206568fd4fd4c885e3ccff76345c4e6}{Function} ()
 \item 
-virtual const double \hyperlink{class_function_ae700c7cb44bd2048d712466767be2803}{f} (const vector$<$ double $>$ \&)=0
+void \hyperlink{class_function_a8c8f0ba3282431096ce7397c89357cef}{set\+Dim} (const int)
+\item 
+int const \hyperlink{class_function_a6d8e35610e59d11da7c21da19b061bac}{get\+Dim} () const
+\item 
+\hyperlink{class_area}{Area} \hyperlink{class_function_a8407865d197005fb990c87f83fd020b0}{get\+Area} () const
+\item 
+virtual const double \hyperlink{class_function_a81ec299f137e34109246cde88d88c949}{f} (const vector$<$ double $>$ \&) const =0
 \item 
 \hyperlink{class_function_a3b03f7cf0b75d16edebdda1dee1db6fd}{$\sim$\+Function} ()
 \item 
-virtual const char $\ast$ \hyperlink{class_function_a928c579622c47d98e91477ef18dec199}{get\+\_\+function\+\_\+name} () const =0
+virtual const char $\ast$ \hyperlink{class_function_ab19392e324813377fc6171bf354c24fb}{get\+Function\+Name} () const =0
 \item 
-virtual vector$<$ double $>$ \hyperlink{class_function_a1396da5e1ee7418c76f14731128c08b4}{grad} (const vector$<$ double $>$ \&x)
+virtual vector$<$ double $>$ \hyperlink{class_function_a9f2d70a7cf5875661a0f3b0e115dedc2}{get\+Gradient} (const vector$<$ double $>$ \&x) const
 \begin{DoxyCompactList}\small\item\em It calculates numerically the gradient at the point x of a function, or exactly if the gradient is explicitly defined in the derived class. \end{DoxyCompactList}\item 
-double \hyperlink{class_function_a27a785d42a8cb420ee60358277188f44}{directional\+\_\+derivative} (const vector$<$ double $>$ \&x, const vector$<$ double $>$ \&p)
+double \hyperlink{class_function_af463683db78c587160ca6040083f3deb}{get\+Directional\+Derivative} (const vector$<$ double $>$ \&x, const vector$<$ double $>$ \&p) const
 \begin{DoxyCompactList}\small\item\em It calculates the numerically derivative of the objective function at the point x in a given direction. \end{DoxyCompactList}\item 
 double \hyperlink{class_function_ae890d237648f6320730436a66920a6e7}{operator()} (const vector$<$ double $>$ \&x)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_function_a4b8560408fbefc8a791b70f35959d3a1}{dim}
+\item 
+const double \hyperlink{class_function_af29cd370469d8dbea0a7b5c3b0925323}{D\+E\+L\+TA} = 0.\+000000001
+\item 
+\hyperlink{class_area}{Area} \hyperlink{class_function_a03b771b5e5eb0acd456cd897b04edbab}{D}
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -49,6 +64,18 @@ vector$<$ double $>$ \hyperlink{class_function_af7fb1be44ca3ade61cec8d396d0a3ca1
 Abstract base class for a multidimensional functions and information about it. 
 
 \subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_function_a7055e57520effff828782ea44498c3e3}\label{class_function_a7055e57520effff828782ea44498c3e3}} 
+\index{Function@{Function}!Function@{Function}}
+\index{Function@{Function}!Function@{Function}}
+\subsubsection{\texorpdfstring{Function()}{Function()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Function\+::\+Function (\begin{DoxyParamCaption}\item[{const \hyperlink{class_area}{Area} \&}]{d }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_function_ae206568fd4fd4c885e3ccff76345c4e6}\label{class_function_ae206568fd4fd4c885e3ccff76345c4e6}} 
+\index{Function@{Function}!Function@{Function}}
+\index{Function@{Function}!Function@{Function}}
+\subsubsection{\texorpdfstring{Function()}{Function()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Function\+::\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{class_function_a3b03f7cf0b75d16edebdda1dee1db6fd}\label{class_function_a3b03f7cf0b75d16edebdda1dee1db6fd}} 
 \index{Function@{Function}!````~Function@{$\sim$\+Function}}
 \index{````~Function@{$\sim$\+Function}!Function@{Function}}
@@ -58,11 +85,33 @@ Abstract base class for a multidimensional functions and information about it.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_function_a27a785d42a8cb420ee60358277188f44}\label{class_function_a27a785d42a8cb420ee60358277188f44}} 
-\index{Function@{Function}!directional\+\_\+derivative@{directional\+\_\+derivative}}
-\index{directional\+\_\+derivative@{directional\+\_\+derivative}!Function@{Function}}
-\subsubsection{\texorpdfstring{directional\+\_\+derivative()}{directional\_derivative()}}
-{\footnotesize\ttfamily double Function\+::directional\+\_\+derivative (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{x,  }\item[{const vector$<$ double $>$ \&}]{p }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_function_a81ec299f137e34109246cde88d88c949}\label{class_function_a81ec299f137e34109246cde88d88c949}} 
+\index{Function@{Function}!f@{f}}
+\index{f@{f}!Function@{Function}}
+\subsubsection{\texorpdfstring{f()}{f()}}
+{\footnotesize\ttfamily virtual const double Function\+::f (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_fun5_ae85d60bda47bb388c18723e4e887d409}{Fun5}, \hyperlink{class_fun4_a6d02fcaf80b0baa15b2828afb19dee12}{Fun4}, \hyperlink{class_fun3_ad0ed4dd48ce5107560db42959f57f1f5}{Fun3}, \hyperlink{class_fun2_a6e9544da42cee65e9cbc8b56b233877c}{Fun2}, and \hyperlink{class_fun1_adbd9aa971a649a7b6eda8fb6806a8498}{Fun1}.
+
+\mbox{\Hypertarget{class_function_a8407865d197005fb990c87f83fd020b0}\label{class_function_a8407865d197005fb990c87f83fd020b0}} 
+\index{Function@{Function}!get\+Area@{get\+Area}}
+\index{get\+Area@{get\+Area}!Function@{Function}}
+\subsubsection{\texorpdfstring{get\+Area()}{getArea()}}
+{\footnotesize\ttfamily \hyperlink{class_area}{Area} Function\+::get\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_function_a6d8e35610e59d11da7c21da19b061bac}\label{class_function_a6d8e35610e59d11da7c21da19b061bac}} 
+\index{Function@{Function}!get\+Dim@{get\+Dim}}
+\index{get\+Dim@{get\+Dim}!Function@{Function}}
+\subsubsection{\texorpdfstring{get\+Dim()}{getDim()}}
+{\footnotesize\ttfamily int const Function\+::get\+Dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_function_af463683db78c587160ca6040083f3deb}\label{class_function_af463683db78c587160ca6040083f3deb}} 
+\index{Function@{Function}!get\+Directional\+Derivative@{get\+Directional\+Derivative}}
+\index{get\+Directional\+Derivative@{get\+Directional\+Derivative}!Function@{Function}}
+\subsubsection{\texorpdfstring{get\+Directional\+Derivative()}{getDirectionalDerivative()}}
+{\footnotesize\ttfamily double Function\+::get\+Directional\+Derivative (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{x,  }\item[{const vector$<$ double $>$ \&}]{p }\end{DoxyParamCaption}) const}
 
 
 
@@ -75,37 +124,21 @@ It calculates the numerically derivative of the objective function at the point 
 \mbox{\tt in}  & {\em p} & directing vector \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_function_ae700c7cb44bd2048d712466767be2803}\label{class_function_ae700c7cb44bd2048d712466767be2803}} 
-\index{Function@{Function}!f@{f}}
-\index{f@{f}!Function@{Function}}
-\subsubsection{\texorpdfstring{f()}{f()}}
-{\footnotesize\ttfamily virtual const double Function\+::f (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\mbox{\Hypertarget{class_function_ab19392e324813377fc6171bf354c24fb}\label{class_function_ab19392e324813377fc6171bf354c24fb}} 
+\index{Function@{Function}!get\+Function\+Name@{get\+Function\+Name}}
+\index{get\+Function\+Name@{get\+Function\+Name}!Function@{Function}}
+\subsubsection{\texorpdfstring{get\+Function\+Name()}{getFunctionName()}}
+{\footnotesize\ttfamily virtual const char$\ast$ Function\+::get\+Function\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \hyperlink{classfun5_a8b68e41838f1055f14f1f5bd317fc84d}{fun5}, \hyperlink{classfun4_a3b693cb223f26fb733381d601751eb5c}{fun4}, \hyperlink{classfun3_a6c801db638950a09e1ee4e5199ce511b}{fun3}, \hyperlink{classfun2_a8c363f61d3161648813004cfc341cbd1}{fun2}, and \hyperlink{classfun1_afc5f6c5f842b59be98115c23864ccce5}{fun1}.
+Implemented in \hyperlink{class_fun5_acaa887c03e39c037f49205b3b20b7464}{Fun5}, \hyperlink{class_fun4_a7d4a9da6240876674244784c79184772}{Fun4}, \hyperlink{class_fun3_a512d64bca04226bb354d8a7505794277}{Fun3}, \hyperlink{class_fun2_ac5702f1a8350b7a7f4b796b99cd5b08f}{Fun2}, and \hyperlink{class_fun1_a94ea2bb4448ebe03753de16d07784ea8}{Fun1}.
 
-\mbox{\Hypertarget{class_function_ab822c64ba8beb7fd17e8b1a38b8ff9ca}\label{class_function_ab822c64ba8beb7fd17e8b1a38b8ff9ca}} 
-\index{Function@{Function}!get\+\_\+dim@{get\+\_\+dim}}
-\index{get\+\_\+dim@{get\+\_\+dim}!Function@{Function}}
-\subsubsection{\texorpdfstring{get\+\_\+dim()}{get\_dim()}}
-{\footnotesize\ttfamily int const Function\+::get\+\_\+dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-\mbox{\Hypertarget{class_function_a928c579622c47d98e91477ef18dec199}\label{class_function_a928c579622c47d98e91477ef18dec199}} 
-\index{Function@{Function}!get\+\_\+function\+\_\+name@{get\+\_\+function\+\_\+name}}
-\index{get\+\_\+function\+\_\+name@{get\+\_\+function\+\_\+name}!Function@{Function}}
-\subsubsection{\texorpdfstring{get\+\_\+function\+\_\+name()}{get\_function\_name()}}
-{\footnotesize\ttfamily virtual const char$\ast$ Function\+::get\+\_\+function\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
-
-
-Implemented in \hyperlink{classfun5_af90356003e95287857dd39404ba3f232}{fun5}, \hyperlink{classfun4_a8f28df4800e2e572cf60d2d02e299100}{fun4}, \hyperlink{classfun3_a51588a69a8a3a5c2a372b3c678e7d5a5}{fun3}, \hyperlink{classfun2_ad46fa2b40e24f7c13ea765f8ff5f9c24}{fun2}, and \hyperlink{classfun1_ad511ad7550fdfed650b5ded751f0f1e2}{fun1}.
-
-\mbox{\Hypertarget{class_function_a1396da5e1ee7418c76f14731128c08b4}\label{class_function_a1396da5e1ee7418c76f14731128c08b4}} 
-\index{Function@{Function}!grad@{grad}}
-\index{grad@{grad}!Function@{Function}}
-\subsubsection{\texorpdfstring{grad()}{grad()}}
-{\footnotesize\ttfamily vector$<$ double $>$ Function\+::grad (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\mbox{\Hypertarget{class_function_a9f2d70a7cf5875661a0f3b0e115dedc2}\label{class_function_a9f2d70a7cf5875661a0f3b0e115dedc2}} 
+\index{Function@{Function}!get\+Gradient@{get\+Gradient}}
+\index{get\+Gradient@{get\+Gradient}!Function@{Function}}
+\subsubsection{\texorpdfstring{get\+Gradient()}{getGradient()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Function\+::get\+Gradient (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -119,21 +152,17 @@ It calculates numerically the gradient at the point x of a function, or exactly 
 \begin{DoxyReturn}{Returns}
 gradf(x) 
 \end{DoxyReturn}
-
-
-Reimplemented in \hyperlink{classfun2_ae8465662c95bd065f993853609277e9b}{fun2}.
-
 \mbox{\Hypertarget{class_function_ae890d237648f6320730436a66920a6e7}\label{class_function_ae890d237648f6320730436a66920a6e7}} 
 \index{Function@{Function}!operator()@{operator()}}
 \index{operator()@{operator()}!Function@{Function}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}}
 {\footnotesize\ttfamily double Function\+::operator() (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_function_a62de0ce683667593f68559566e35726f}\label{class_function_a62de0ce683667593f68559566e35726f}} 
-\index{Function@{Function}!set\+\_\+dim@{set\+\_\+dim}}
-\index{set\+\_\+dim@{set\+\_\+dim}!Function@{Function}}
-\subsubsection{\texorpdfstring{set\+\_\+dim()}{set\_dim()}}
-{\footnotesize\ttfamily void Function\+::set\+\_\+dim (\begin{DoxyParamCaption}\item[{const int}]{d }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_function_a8c8f0ba3282431096ce7397c89357cef}\label{class_function_a8c8f0ba3282431096ce7397c89357cef}} 
+\index{Function@{Function}!set\+Dim@{set\+Dim}}
+\index{set\+Dim@{set\+Dim}!Function@{Function}}
+\subsubsection{\texorpdfstring{set\+Dim()}{setDim()}}
+{\footnotesize\ttfamily void Function\+::set\+Dim (\begin{DoxyParamCaption}\item[{const int}]{d }\end{DoxyParamCaption})}
 
 
 
@@ -169,6 +198,27 @@ It computes the norm of the vector x.
 
 
 It computes the scalar product between the vectors a and b. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_function_a03b771b5e5eb0acd456cd897b04edbab}\label{class_function_a03b771b5e5eb0acd456cd897b04edbab}} 
+\index{Function@{Function}!D@{D}}
+\index{D@{D}!Function@{Function}}
+\subsubsection{\texorpdfstring{D}{D}}
+{\footnotesize\ttfamily \hyperlink{class_area}{Area} Function\+::D\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_function_af29cd370469d8dbea0a7b5c3b0925323}\label{class_function_af29cd370469d8dbea0a7b5c3b0925323}} 
+\index{Function@{Function}!D\+E\+L\+TA@{D\+E\+L\+TA}}
+\index{D\+E\+L\+TA@{D\+E\+L\+TA}!Function@{Function}}
+\subsubsection{\texorpdfstring{D\+E\+L\+TA}{DELTA}}
+{\footnotesize\ttfamily const double Function\+::\+D\+E\+L\+TA = 0.\+000000001\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_function_a4b8560408fbefc8a791b70f35959d3a1}\label{class_function_a4b8560408fbefc8a791b70f35959d3a1}} 
+\index{Function@{Function}!dim@{dim}}
+\index{dim@{dim}!Function@{Function}}
+\subsubsection{\texorpdfstring{dim}{dim}}
+{\footnotesize\ttfamily int Function\+::dim\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
