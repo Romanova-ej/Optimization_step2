@@ -1,8 +1,4 @@
-﻿  Optimization_step2.cpp
-c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(20): warning C4018: '<': signed/unsigned mismatch
-c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(27): warning C4018: '<': signed/unsigned mismatch
-c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(33): warning C4018: '<': signed/unsigned mismatch
-c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(40): warning C4018: '<': signed/unsigned mismatch
-c:\users\user\documents\visual studio 2015\projects\optimization_step2\optimization_step2.cpp(46): warning C4018: '<': signed/unsigned mismatch
+﻿  Function.cpp
+c:\users\user\documents\visual studio 2015\projects\optimization_step2\function.cpp(13): warning C4018: '<': signed/unsigned mismatch
   Optimization_step2.vcxproj -> C:\Users\User\Documents\Visual Studio 2015\Projects\Optimization_step2\Debug\Optimization_step2.exe
   Optimization_step2.vcxproj -> C:\Users\User\Documents\Visual Studio 2015\Projects\Optimization_step2\Debug\Optimization_step2.pdb (Full PDB)

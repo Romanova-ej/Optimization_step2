@@ -2,22 +2,22 @@
 #include "HCriterion.h"
 using namespace std;
 
-const double Criterion::get_eps() const { return eps; }
-const bool Criterion_grad_norm::stop( vector<double> x, const  vector<double>& y, Function& f, int num_iteration, int num_iteration_without_change)  const {
-	return (norm(f.grad(x)) < get_eps());
+
+inline const double Criterion::getEps() const { return eps; }
+const bool CriterionGradNorm::stop(vector<double> x, const  vector<double>& y, Function& f, int nIteration, int nIterationWithoutChange)  const {
+	return ((norm(f.getGradient(x)) < getEps())||stopIfMoreIteration(nIteration));
+}
+const bool Criterion::stopIfMoreIteration(int nIteration) const {
+	return(nIteration > stopIndex);
 }
 
-const bool Criterion_num_of_iteration::stop( vector<double> x, const vector<double>& y, Function& f, int num_iteration, int num_iteration_without_change) const {
-	return(num_iteration > STOPindex);
+const bool CriterionNumOfNochangeIteration::stop(vector<double> x, const vector<double>& y, Function& f, int nIteration, int nIterationWithoutChange) const {
+	return((nIterationWithoutChange > stopIfnoChange) || stopIfMoreIteration(nIteration));
 }
 
-const bool Criterion_num_of_nochange_iteration::stop( vector<double> x, const vector<double>& y, Function& f, int num_iteration, int num_iteration_without_change) const {
-	return(num_iteration_without_change > STOPifno_change);
+const bool CriterionDifferenceOfValuef::stop(vector<double> x, const  vector<double>& y, Function& f, int nIteration, int nIterationWithoutChange) const {
+	return((fabs(f(x) - f(y)) < getEps()) || stopIfMoreIteration(nIteration));
 }
-
-const bool Criterion_dif_of_f::stop( vector<double> x, const  vector<double>& y, Function& f, int num_iteration, int num_iteration_without_change) const {
-	return(abs(f(x) - f(y)) < get_eps());
-}
-const bool Criterion_one_dim_norm::stop( vector<double> x, const vector<double>& y, Function& f, int num_iteration, int num_iteration_without_change) const {
-	return(abs(x[0])<get_eps());//немного костыль. это для случая константы 
+const bool CriterionOneDimNorm::stop(vector<double> x, const vector<double>& y, Function& f, int nIteration, int nIterationWithoutChange) const {
+	return((fabs(x[0]) < getEps()) || stopIfMoreIteration(nIteration));
 }

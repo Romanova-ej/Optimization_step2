@@ -7,8 +7,15 @@
 #include <vector>
 #include <iomanip>
 #include<random>
-using namespace std;
+/**
+\file
+\brief Header file describing the class Area and its heirs
+*/
 
+using namespace std;
+/**
+\brief Abstract base class for areas (parallelepiped) on which the minimum is sought
+*/
 class Area {
 	vector<double> left;
 	vector<double> right;
@@ -16,18 +23,24 @@ class Area {
 public:
 	Area(const vector<double>& l, const vector<double>& r) : left(l), right(r), dim(l.size()) {}
 	Area() : dim(0) {}
-	void set_area(const vector<double>& l, const vector<double>& r);
-	const int get_dim()const;
-	const vector<double> get_left() const;
-	const vector<double> get_right()const;
+	void setArea(const vector<double>& l, const vector<double>& r);
+	const int getDim()const;
+	const vector<double> getLeft() const;
+	const vector<double> getRight()const;
 };
 
-class Area_dim4 :public Area {
+/**
+\brief The class stores a region of dimension 4
+*/
+class AreaDim4 :public Area {
 public:
-	Area_dim4();
+	AreaDim4();
 };
 
-class Area_dim2 : public Area {
+/**
+\brief The class stores a region of dimension 2
+*/
+class AreaDim2 : public Area {
 public:
-	Area_dim2(); 
+	AreaDim2(); 
 };

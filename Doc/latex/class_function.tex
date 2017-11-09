@@ -1,0 +1,178 @@
+\hypertarget{class_function}{}\section{Function Class Reference}
+\label{class_function}\index{Function@{Function}}
+
+
+Abstract base class for a multidimensional functions and information about it.  
+
+
+
+
+{\ttfamily \#include $<$H\+Function.\+h$>$}
+
+
+
+Inherited by \hyperlink{classfun1}{fun1}, \hyperlink{classfun2}{fun2}, \hyperlink{classfun3}{fun3}, \hyperlink{classfun4}{fun4}, and \hyperlink{classfun5}{fun5}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_function_a62de0ce683667593f68559566e35726f}{set\+\_\+dim} (const int)
+\item 
+int const \hyperlink{class_function_ab822c64ba8beb7fd17e8b1a38b8ff9ca}{get\+\_\+dim} () const
+\item 
+virtual const double \hyperlink{class_function_ae700c7cb44bd2048d712466767be2803}{f} (const vector$<$ double $>$ \&)=0
+\item 
+\hyperlink{class_function_a3b03f7cf0b75d16edebdda1dee1db6fd}{$\sim$\+Function} ()
+\item 
+virtual const char $\ast$ \hyperlink{class_function_a928c579622c47d98e91477ef18dec199}{get\+\_\+function\+\_\+name} () const =0
+\item 
+virtual vector$<$ double $>$ \hyperlink{class_function_a1396da5e1ee7418c76f14731128c08b4}{grad} (const vector$<$ double $>$ \&x)
+\begin{DoxyCompactList}\small\item\em It calculates numerically the gradient at the point x of a function, or exactly if the gradient is explicitly defined in the derived class. \end{DoxyCompactList}\item 
+double \hyperlink{class_function_a27a785d42a8cb420ee60358277188f44}{directional\+\_\+derivative} (const vector$<$ double $>$ \&x, const vector$<$ double $>$ \&p)
+\begin{DoxyCompactList}\small\item\em It calculates the numerically derivative of the objective function at the point x in a given direction. \end{DoxyCompactList}\item 
+double \hyperlink{class_function_ae890d237648f6320730436a66920a6e7}{operator()} (const vector$<$ double $>$ \&x)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_function_a52e0aa61f3f38c1b981ad4c1deeebed5}{norm} (const vector$<$ double $>$ \&x)
+\begin{DoxyCompactList}\small\item\em It computes the norm of the vector x. \end{DoxyCompactList}\item 
+double \hyperlink{class_function_a5bba89b945d56abb9cf2dd756cf71fb8}{scalar\+\_\+prod} (const vector$<$ double $>$ \&a, const vector$<$ double $>$ \&b)
+\begin{DoxyCompactList}\small\item\em It computes the scalar product between the vectors a and b. \end{DoxyCompactList}\item 
+const vector$<$ double $>$ \hyperlink{class_function_a5c042028e918038808f0b9255d846bdc}{operator$\ast$} (const double a, const vector$<$ double $>$ \&B)
+\item 
+vector$<$ double $>$ \hyperlink{class_function_af7fb1be44ca3ade61cec8d396d0a3ca1}{operator+} (const vector$<$ double $>$ \&a, const vector$<$ double $>$ \&b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract base class for a multidimensional functions and information about it. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_function_a3b03f7cf0b75d16edebdda1dee1db6fd}\label{class_function_a3b03f7cf0b75d16edebdda1dee1db6fd}} 
+\index{Function@{Function}!````~Function@{$\sim$\+Function}}
+\index{````~Function@{$\sim$\+Function}!Function@{Function}}
+\subsubsection{\texorpdfstring{$\sim$\+Function()}{~Function()}}
+{\footnotesize\ttfamily Function\+::$\sim$\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_function_a27a785d42a8cb420ee60358277188f44}\label{class_function_a27a785d42a8cb420ee60358277188f44}} 
+\index{Function@{Function}!directional\+\_\+derivative@{directional\+\_\+derivative}}
+\index{directional\+\_\+derivative@{directional\+\_\+derivative}!Function@{Function}}
+\subsubsection{\texorpdfstring{directional\+\_\+derivative()}{directional\_derivative()}}
+{\footnotesize\ttfamily double Function\+::directional\+\_\+derivative (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{x,  }\item[{const vector$<$ double $>$ \&}]{p }\end{DoxyParamCaption})}
+
+
+
+It calculates the numerically derivative of the objective function at the point x in a given direction. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & vector-\/point \\
+\hline
+\mbox{\tt in}  & {\em p} & directing vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_function_ae700c7cb44bd2048d712466767be2803}\label{class_function_ae700c7cb44bd2048d712466767be2803}} 
+\index{Function@{Function}!f@{f}}
+\index{f@{f}!Function@{Function}}
+\subsubsection{\texorpdfstring{f()}{f()}}
+{\footnotesize\ttfamily virtual const double Function\+::f (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classfun5_a8b68e41838f1055f14f1f5bd317fc84d}{fun5}, \hyperlink{classfun4_a3b693cb223f26fb733381d601751eb5c}{fun4}, \hyperlink{classfun3_a6c801db638950a09e1ee4e5199ce511b}{fun3}, \hyperlink{classfun2_a8c363f61d3161648813004cfc341cbd1}{fun2}, and \hyperlink{classfun1_afc5f6c5f842b59be98115c23864ccce5}{fun1}.
+
+\mbox{\Hypertarget{class_function_ab822c64ba8beb7fd17e8b1a38b8ff9ca}\label{class_function_ab822c64ba8beb7fd17e8b1a38b8ff9ca}} 
+\index{Function@{Function}!get\+\_\+dim@{get\+\_\+dim}}
+\index{get\+\_\+dim@{get\+\_\+dim}!Function@{Function}}
+\subsubsection{\texorpdfstring{get\+\_\+dim()}{get\_dim()}}
+{\footnotesize\ttfamily int const Function\+::get\+\_\+dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_function_a928c579622c47d98e91477ef18dec199}\label{class_function_a928c579622c47d98e91477ef18dec199}} 
+\index{Function@{Function}!get\+\_\+function\+\_\+name@{get\+\_\+function\+\_\+name}}
+\index{get\+\_\+function\+\_\+name@{get\+\_\+function\+\_\+name}!Function@{Function}}
+\subsubsection{\texorpdfstring{get\+\_\+function\+\_\+name()}{get\_function\_name()}}
+{\footnotesize\ttfamily virtual const char$\ast$ Function\+::get\+\_\+function\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classfun5_af90356003e95287857dd39404ba3f232}{fun5}, \hyperlink{classfun4_a8f28df4800e2e572cf60d2d02e299100}{fun4}, \hyperlink{classfun3_a51588a69a8a3a5c2a372b3c678e7d5a5}{fun3}, \hyperlink{classfun2_ad46fa2b40e24f7c13ea765f8ff5f9c24}{fun2}, and \hyperlink{classfun1_ad511ad7550fdfed650b5ded751f0f1e2}{fun1}.
+
+\mbox{\Hypertarget{class_function_a1396da5e1ee7418c76f14731128c08b4}\label{class_function_a1396da5e1ee7418c76f14731128c08b4}} 
+\index{Function@{Function}!grad@{grad}}
+\index{grad@{grad}!Function@{Function}}
+\subsubsection{\texorpdfstring{grad()}{grad()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Function\+::grad (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+It calculates numerically the gradient at the point x of a function, or exactly if the gradient is explicitly defined in the derived class. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+gradf(x) 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classfun2_ae8465662c95bd065f993853609277e9b}{fun2}.
+
+\mbox{\Hypertarget{class_function_ae890d237648f6320730436a66920a6e7}\label{class_function_ae890d237648f6320730436a66920a6e7}} 
+\index{Function@{Function}!operator()@{operator()}}
+\index{operator()@{operator()}!Function@{Function}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily double Function\+::operator() (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_function_a62de0ce683667593f68559566e35726f}\label{class_function_a62de0ce683667593f68559566e35726f}} 
+\index{Function@{Function}!set\+\_\+dim@{set\+\_\+dim}}
+\index{set\+\_\+dim@{set\+\_\+dim}!Function@{Function}}
+\subsubsection{\texorpdfstring{set\+\_\+dim()}{set\_dim()}}
+{\footnotesize\ttfamily void Function\+::set\+\_\+dim (\begin{DoxyParamCaption}\item[{const int}]{d }\end{DoxyParamCaption})}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_function_a52e0aa61f3f38c1b981ad4c1deeebed5}\label{class_function_a52e0aa61f3f38c1b981ad4c1deeebed5}} 
+\index{Function@{Function}!norm@{norm}}
+\index{norm@{norm}!Function@{Function}}
+\subsubsection{\texorpdfstring{norm}{norm}}
+{\footnotesize\ttfamily double norm (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+It computes the norm of the vector x. 
+
+\mbox{\Hypertarget{class_function_a5c042028e918038808f0b9255d846bdc}\label{class_function_a5c042028e918038808f0b9255d846bdc}} 
+\index{Function@{Function}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Function@{Function}}
+\subsubsection{\texorpdfstring{operator$\ast$}{operator*}}
+{\footnotesize\ttfamily const vector$<$double$>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{const double}]{a,  }\item[{const vector$<$ double $>$ \&}]{B }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_function_af7fb1be44ca3ade61cec8d396d0a3ca1}\label{class_function_af7fb1be44ca3ade61cec8d396d0a3ca1}} 
+\index{Function@{Function}!operator+@{operator+}}
+\index{operator+@{operator+}!Function@{Function}}
+\subsubsection{\texorpdfstring{operator+}{operator+}}
+{\footnotesize\ttfamily vector$<$double$>$ operator+ (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{a,  }\item[{const vector$<$ double $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_function_a5bba89b945d56abb9cf2dd756cf71fb8}\label{class_function_a5bba89b945d56abb9cf2dd756cf71fb8}} 
+\index{Function@{Function}!scalar\+\_\+prod@{scalar\+\_\+prod}}
+\index{scalar\+\_\+prod@{scalar\+\_\+prod}!Function@{Function}}
+\subsubsection{\texorpdfstring{scalar\+\_\+prod}{scalar\_prod}}
+{\footnotesize\ttfamily double scalar\+\_\+prod (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{a,  }\item[{const vector$<$ double $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+It computes the scalar product between the vectors a and b. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+User/\+Documents/\+Visual Studio 2015/\+Projects/\+Optimization\+\_\+step2/\hyperlink{_h_function_8h}{H\+Function.\+h}\item 
+C\+:/\+Users/\+User/\+Documents/\+Visual Studio 2015/\+Projects/\+Optimization\+\_\+step2/\hyperlink{_function_8cpp}{Function.\+cpp}\end{DoxyCompactItemize}

@@ -11,40 +11,60 @@
 #include "HCriterion.h"
 #include "HFunction.h"
 using namespace std;
+/**
+\file
+\brief Header file describing the class Optimization and its heirs
+*/
 
-
-
+/**
+\brief Abstract class for solve the problem of multidimensional optimization
+*/
 class Optimization {
 	int counter = 0;
 public:
-	virtual vector<double> minimize(vector<double> x, Function& f, Area& D, Criterion& c1, Criterion& c2) = 0;
-	virtual const char* get_method_name() const = 0;
-	int get_counter() { return counter; }
-	void newiteration() { ++counter; }
+	/**
+	\brief It finds a minimum point with given parameters
+	\param[in] x starting point
+	\param[in] f objective function
+	\param[in] D area of minimization
+	\param[in] c1 break criterion1
+	\param[in] c2 break criterion2
+	\return approximation of the vector x on which the objective function reaches a local minimum
+	*/
+	virtual vector<double> minimize(vector<double> x, std::shared_ptr<Function> f, Area& D, Criterion& c) = 0;
+	virtual const char* getMethodName() const = 0;
+	int getCounter() const{ return counter; }
+	void newIteration() { ++counter; }
 };
 
-class  Fletcher_Rivs :public Optimization {
-	const int forBORDER = 1000000;
+/**
+\brief The class implements the Fletcher-Reeves method
+*/
+class  FletcherRivs :public Optimization {
+	const int FOR_BORDER = 1000000;
 	vector<double> p;
 public:
-	virtual const char* get_method_name() const;
-	double find_border_alpha(vector<double>& x, Area& D);
-	virtual vector<double> minimize( vector<double> x, Function& f, Area& D, Criterion& c1, Criterion& c2) override;
-	double argmin(vector<double> x, Function& f, Area& D,double);
+	virtual const char* getMethodName() const;
+	const double findBorderAlpha(const vector<double>& x, Area& D)const;
+	virtual vector<double> minimize(vector<double> x, std::shared_ptr<Function> f, Area& D, Criterion& c) override;
+	double calculateArgmin(vector<double> x, Function& f, Area& D, double)const;
 };
 
-class Random_Search : public Optimization {
-	int STOPif_no_change;
+/**
+\brief The class implements the random search method
+*/
+class RandomSearch : public Optimization {
+	int stopIfnoChange;
 	double p;//дл€ бернулли
 	double radius;//начальный радиус. мб вычисл€ть в зависимости от D
-	double radius_change;//измен€юща€с€ эпсилон при попадании в один и тот же шар
+	double radiusChange;//измен€юща€с€ эпсилон при попадании в один и тот же шар
 	double change;//множитель изменени€ радиуса
-	vector<double> Uni_in_D(Area& D);
+	vector<double> simulateUniformInD(Area& D);
 public:
-	Random_Search(double probability = 0.8, int whenSTOP = 1000, double whatchange = 0.8);
-	double initial_radius(Area& D) const;
-	virtual const char* get_method_name() const;
-	virtual vector<double> minimize( vector<double> x, Function& f, Area& D, Criterion& c1, Criterion& c2) override;
+	RandomSearch(Area& D,double probability = 0.8, int whenStop = 1000, double whatChange = 0.9);
+	double initializeRadius(Area& D) const;
+	virtual const char* getMethodName() const;
+	virtual vector<double> minimize(vector<double> x, std::shared_ptr<Function> f, Area& D, Criterion& c) override;
 };
 
 

@@ -1,63 +1,118 @@
 #pragma once
 #include "stdafx.h"
-#include "stdafx.h"
 #include <cstdio>
 #include <iostream>
 #include <cmath>
 #include <math.h>
 #include <vector>
 #include <iomanip>
+#include "HArea.h"
+#include <memory>
 #include<random>
 using namespace std;
+/**
+\file
+\brief Header file describing the class Function and its heirs
+*/
 
+/**
+\brief Abstract base class for a multidimensional functions and information about it
+*/
 class Function {
+protected:
 	int dim;
-	const double delta = 0.000000001;//по сути эта точность относится только к функциям
+	const double DELTA = 0.000000001;
+	Area D;
 public:
-	void set_dim(const int);
-	int const get_dim() const;
-	virtual const  double f(const vector<double>&) = 0;
+	Function(const Area& d);
+	Function();
+	void setDim(const int);
+	int const getDim() const;
+	Area getArea() const;
+	virtual const  double f(const vector<double>&) const = 0;
 	~Function();
-	virtual const char* get_function_name() const = 0;
-	virtual  vector<double> grad(const vector<double>& );
-	double directional_derivative(const vector<double>& x, const vector<double>& );
+	virtual const char* getFunctionName() const = 0;
+	//Function& operator=(Function &g) {};
+	
+	/**
+	\brief It calculates numerically the gradient at the point x of a function, or exactly if the gradient is explicitly defined in the derived class
+	\param[in] x vector
+	\return gradf(x)
+	*/
+
+	virtual  vector<double> getGradient(const vector<double>& x) const;
+
+	/**
+	\brief It calculates the numerically derivative of the objective function at the point x in a given direction
+	\param[in] x vector-point 
+	\param[in] p directing vector
+	*/
+	double getDirectionalDerivative(const vector<double>& x, const vector<double>&p) const;
 	double  operator()(const vector<double>& x);
+	/**
+	\brief It computes the norm of the vector x
+	*/
 	friend double norm(const vector<double>& x);
+	/**
+	\brief It computes the scalar product between the vectors a and b
+	*/
 	friend double scalar_prod(const vector<double>& a, const vector<double>& b);
 	friend const vector<double> operator*(const double a, const vector<double> &B);
 	friend vector<double> operator+(const vector<double>& a, const vector<double> &b);
 };
-class fun1 :public Function {
+/**
+\brief Function of two variables
+*/
+class Fun1 :public Function {
 public:
-	fun1();
-	virtual const char* get_function_name() const override;
-	virtual const  double f(const vector<double>& x) override;
+	Fun1();
+	Fun1(const Area& d);
+	virtual const char* getFunctionName() const override;
+	virtual const  double f(const vector<double>& x)const override;
 };
 
-class fun2 :public Function {
+/**
+\brief Quadratic function of four variables
+*/
+class Fun2 :public Function {
 public:
-	fun2();
-	virtual const double f(const vector<double>&) override;
-	virtual vector<double> grad(const vector<double>&);
-	virtual const char* get_function_name() const override;
-};
-class fun3 :public Function {
-public:
-	fun3();
-	virtual const double f(const vector<double>&) override;
-	virtual const char* get_function_name() const override;
-};
-class fun4 :public Function {// решения: x=(1,1),  f=0;
-public:
-	fun4();
-	virtual const char* get_function_name() const override;
-	virtual const double f(const vector<double>& x) override;
+	Fun2();
+	Fun2(const Area& d);
+	virtual const double f(const vector<double>&) const override;
+	virtual vector<double> getGradient(const vector<double>&);
+	virtual const char* getFunctionName() const override;
 };
 
-class fun5 :public Function {// решения: (0,0,0,0)  0
+/**
+\brief Quadratic function of two variables
+*/
+class Fun3 :public Function {
 public:
-	fun5();
-	virtual const char* get_function_name() const override;
-	virtual const double f(const vector<double>& x) override;
+	Fun3();
+	Fun3(const Area& d);
+	virtual const double f(const vector<double>&)const override;
+	virtual const char* getFunctionName() const override;
+};
+
+/**
+\brief  Function of two variables
+*/
+class Fun4 :public Function {// решения: x=(1,1),  f=0;
+public:
+	Fun4();
+	Fun4(const Area& d);
+	virtual const char* getFunctionName() const override;
+	virtual const double f(const vector<double>& x)const override;
+};
+
+/**
+\brief  Function of four variables
+*/
+class Fun5 :public Function {// решения: (0,0,0,0)  0
+public:
+	Fun5();
+	Fun5(const Area& d);
+	virtual const char* getFunctionName() const override;
+	virtual const double f(const vector<double>& x)const override;
 };
 

@@ -1,0 +1,89 @@
+\hypertarget{class_optimization}{}\section{Optimization Class Reference}
+\label{class_optimization}\index{Optimization@{Optimization}}
+
+
+Abstract class for solve the problem of multidimensional optimization.  
+
+
+
+
+{\ttfamily \#include $<$H\+Optimization.\+h$>$}
+
+
+
+Inherited by \hyperlink{class_fletcher___rivs}{Fletcher\+\_\+\+Rivs}, and \hyperlink{class_random___search}{Random\+\_\+\+Search}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual vector$<$ double $>$ \hyperlink{class_optimization_afbcc2bddcaf625671385b2e2d77fc038}{minimize} (vector$<$ double $>$ x, \hyperlink{class_function}{Function} \&f, \hyperlink{class_area}{Area} \&D, \hyperlink{class_criterion}{Criterion} \&c1, \hyperlink{class_criterion}{Criterion} \&c2)=0
+\begin{DoxyCompactList}\small\item\em It finds a minimum point with given parameters. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{class_optimization_a7d4cf7e7c0d0726822e6e29adecbd252}{get\+\_\+method\+\_\+name} () const =0
+\item 
+int \hyperlink{class_optimization_a248956fcbe43e3766423f287553c2c6f}{get\+\_\+counter} () const
+\item 
+void \hyperlink{class_optimization_abafd547d745bc790f7f1ca91097f4257}{newiteration} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class for solve the problem of multidimensional optimization. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_optimization_a248956fcbe43e3766423f287553c2c6f}\label{class_optimization_a248956fcbe43e3766423f287553c2c6f}} 
+\index{Optimization@{Optimization}!get\+\_\+counter@{get\+\_\+counter}}
+\index{get\+\_\+counter@{get\+\_\+counter}!Optimization@{Optimization}}
+\subsubsection{\texorpdfstring{get\+\_\+counter()}{get\_counter()}}
+{\footnotesize\ttfamily int Optimization\+::get\+\_\+counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_optimization_a7d4cf7e7c0d0726822e6e29adecbd252}\label{class_optimization_a7d4cf7e7c0d0726822e6e29adecbd252}} 
+\index{Optimization@{Optimization}!get\+\_\+method\+\_\+name@{get\+\_\+method\+\_\+name}}
+\index{get\+\_\+method\+\_\+name@{get\+\_\+method\+\_\+name}!Optimization@{Optimization}}
+\subsubsection{\texorpdfstring{get\+\_\+method\+\_\+name()}{get\_method\_name()}}
+{\footnotesize\ttfamily virtual const char$\ast$ Optimization\+::get\+\_\+method\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_random___search_a4ba44714765f2835a63765d8ac62dc35}{Random\+\_\+\+Search}, and \hyperlink{class_fletcher___rivs_a2aa5d90c6c4ac0773533adb4ec7c9038}{Fletcher\+\_\+\+Rivs}.
+
+\mbox{\Hypertarget{class_optimization_afbcc2bddcaf625671385b2e2d77fc038}\label{class_optimization_afbcc2bddcaf625671385b2e2d77fc038}} 
+\index{Optimization@{Optimization}!minimize@{minimize}}
+\index{minimize@{minimize}!Optimization@{Optimization}}
+\subsubsection{\texorpdfstring{minimize()}{minimize()}}
+{\footnotesize\ttfamily virtual vector$<$double$>$ Optimization\+::minimize (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{x,  }\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{\hyperlink{class_area}{Area} \&}]{D,  }\item[{\hyperlink{class_criterion}{Criterion} \&}]{c1,  }\item[{\hyperlink{class_criterion}{Criterion} \&}]{c2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+It finds a minimum point with given parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & starting point \\
+\hline
+\mbox{\tt in}  & {\em f} & objective function \\
+\hline
+\mbox{\tt in}  & {\em D} & area of minimization \\
+\hline
+\mbox{\tt in}  & {\em c1} & break criterion1 \\
+\hline
+\mbox{\tt in}  & {\em c2} & break criterion2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximation of the vector x on which the objective function reaches a local minimum 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_random___search_a14fb417ae9e7f3597e5590de599e3846}{Random\+\_\+\+Search}, and \hyperlink{class_fletcher___rivs_a65fe40d186bda0e0a4de8a75aaac01e8}{Fletcher\+\_\+\+Rivs}.
+
+\mbox{\Hypertarget{class_optimization_abafd547d745bc790f7f1ca91097f4257}\label{class_optimization_abafd547d745bc790f7f1ca91097f4257}} 
+\index{Optimization@{Optimization}!newiteration@{newiteration}}
+\index{newiteration@{newiteration}!Optimization@{Optimization}}
+\subsubsection{\texorpdfstring{newiteration()}{newiteration()}}
+{\footnotesize\ttfamily void Optimization\+::newiteration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+User/\+Documents/\+Visual Studio 2015/\+Projects/\+Optimization\+\_\+step2/\hyperlink{_h_optimization_8h}{H\+Optimization.\+h}\end{DoxyCompactItemize}

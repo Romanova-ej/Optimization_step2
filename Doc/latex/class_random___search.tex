@@ -1,0 +1,93 @@
+\hypertarget{class_random___search}{}\section{Random\+\_\+\+Search Class Reference}
+\label{class_random___search}\index{Random\+\_\+\+Search@{Random\+\_\+\+Search}}
+
+
+The class implements the random search method.  
+
+
+
+
+{\ttfamily \#include $<$H\+Optimization.\+h$>$}
+
+
+
+Inherits \hyperlink{class_optimization}{Optimization}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_random___search_ac7ba7f72e3d13ae8354617ba04aaae11}{Random\+\_\+\+Search} (\hyperlink{class_area}{Area} \&D, double probability=0.\+8, int when\+S\+T\+OP=1000, double whatchange=0.\+9)
+\item 
+double \hyperlink{class_random___search_a4f55089354c6d2e27bef8e96a0f18f80}{initial\+\_\+radius} (\hyperlink{class_area}{Area} \&D) const
+\item 
+virtual const char $\ast$ \hyperlink{class_random___search_a4ba44714765f2835a63765d8ac62dc35}{get\+\_\+method\+\_\+name} () const
+\item 
+virtual vector$<$ double $>$ \hyperlink{class_random___search_a14fb417ae9e7f3597e5590de599e3846}{minimize} (vector$<$ double $>$ x, \hyperlink{class_function}{Function} \&f, \hyperlink{class_area}{Area} \&D, \hyperlink{class_criterion}{Criterion} \&c1, \hyperlink{class_criterion}{Criterion} \&c2) override
+\begin{DoxyCompactList}\small\item\em It finds a minimum point with given parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class implements the random search method. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_random___search_ac7ba7f72e3d13ae8354617ba04aaae11}\label{class_random___search_ac7ba7f72e3d13ae8354617ba04aaae11}} 
+\index{Random\+\_\+\+Search@{Random\+\_\+\+Search}!Random\+\_\+\+Search@{Random\+\_\+\+Search}}
+\index{Random\+\_\+\+Search@{Random\+\_\+\+Search}!Random\+\_\+\+Search@{Random\+\_\+\+Search}}
+\subsubsection{\texorpdfstring{Random\+\_\+\+Search()}{Random\_Search()}}
+{\footnotesize\ttfamily Random\+\_\+\+Search\+::\+Random\+\_\+\+Search (\begin{DoxyParamCaption}\item[{\hyperlink{class_area}{Area} \&}]{D,  }\item[{double}]{probability = {\ttfamily 0.8},  }\item[{int}]{when\+S\+T\+OP = {\ttfamily 1000},  }\item[{double}]{whatchange = {\ttfamily 0.9} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_random___search_a4ba44714765f2835a63765d8ac62dc35}\label{class_random___search_a4ba44714765f2835a63765d8ac62dc35}} 
+\index{Random\+\_\+\+Search@{Random\+\_\+\+Search}!get\+\_\+method\+\_\+name@{get\+\_\+method\+\_\+name}}
+\index{get\+\_\+method\+\_\+name@{get\+\_\+method\+\_\+name}!Random\+\_\+\+Search@{Random\+\_\+\+Search}}
+\subsubsection{\texorpdfstring{get\+\_\+method\+\_\+name()}{get\_method\_name()}}
+{\footnotesize\ttfamily const char $\ast$ Random\+\_\+\+Search\+::get\+\_\+method\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_optimization_a7d4cf7e7c0d0726822e6e29adecbd252}{Optimization}.
+
+\mbox{\Hypertarget{class_random___search_a4f55089354c6d2e27bef8e96a0f18f80}\label{class_random___search_a4f55089354c6d2e27bef8e96a0f18f80}} 
+\index{Random\+\_\+\+Search@{Random\+\_\+\+Search}!initial\+\_\+radius@{initial\+\_\+radius}}
+\index{initial\+\_\+radius@{initial\+\_\+radius}!Random\+\_\+\+Search@{Random\+\_\+\+Search}}
+\subsubsection{\texorpdfstring{initial\+\_\+radius()}{initial\_radius()}}
+{\footnotesize\ttfamily double Random\+\_\+\+Search\+::initial\+\_\+radius (\begin{DoxyParamCaption}\item[{\hyperlink{class_area}{Area} \&}]{D }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_random___search_a14fb417ae9e7f3597e5590de599e3846}\label{class_random___search_a14fb417ae9e7f3597e5590de599e3846}} 
+\index{Random\+\_\+\+Search@{Random\+\_\+\+Search}!minimize@{minimize}}
+\index{minimize@{minimize}!Random\+\_\+\+Search@{Random\+\_\+\+Search}}
+\subsubsection{\texorpdfstring{minimize()}{minimize()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Random\+\_\+\+Search\+::minimize (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{x,  }\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{\hyperlink{class_area}{Area} \&}]{D,  }\item[{\hyperlink{class_criterion}{Criterion} \&}]{c1,  }\item[{\hyperlink{class_criterion}{Criterion} \&}]{c2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+It finds a minimum point with given parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & starting point \\
+\hline
+\mbox{\tt in}  & {\em f} & objective function \\
+\hline
+\mbox{\tt in}  & {\em D} & area of minimization \\
+\hline
+\mbox{\tt in}  & {\em c1} & break criterion1 \\
+\hline
+\mbox{\tt in}  & {\em c2} & break criterion2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximation of the vector x on which the objective function reaches a local minimum 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_optimization_afbcc2bddcaf625671385b2e2d77fc038}{Optimization}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+User/\+Documents/\+Visual Studio 2015/\+Projects/\+Optimization\+\_\+step2/\hyperlink{_h_optimization_8h}{H\+Optimization.\+h}\item 
+C\+:/\+Users/\+User/\+Documents/\+Visual Studio 2015/\+Projects/\+Optimization\+\_\+step2/\hyperlink{_optimization_8cpp}{Optimization.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,119 @@
+\hypertarget{class_fletcher___rivs}{}\section{Fletcher\+\_\+\+Rivs Class Reference}
+\label{class_fletcher___rivs}\index{Fletcher\+\_\+\+Rivs@{Fletcher\+\_\+\+Rivs}}
+
+
+The class implements the Fletcher-\/\+Reeves method.  
+
+
+
+
+{\ttfamily \#include $<$H\+Optimization.\+h$>$}
+
+
+
+Inherits \hyperlink{class_optimization}{Optimization}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const char $\ast$ \hyperlink{class_fletcher___rivs_a2aa5d90c6c4ac0773533adb4ec7c9038}{get\+\_\+method\+\_\+name} () const
+\item 
+double \hyperlink{class_fletcher___rivs_a2d42dcde66a34d8199d4d2a8e7c6805e}{find\+\_\+border\+\_\+alpha} (const vector$<$ double $>$ \&x, \hyperlink{class_area}{Area} \&D) const
+\begin{DoxyCompactList}\small\item\em It finds the distance to the nearest boundary of the region in a given direction. \end{DoxyCompactList}\item 
+virtual vector$<$ double $>$ \hyperlink{class_fletcher___rivs_a65fe40d186bda0e0a4de8a75aaac01e8}{minimize} (vector$<$ double $>$ x, \hyperlink{class_function}{Function} \&f, \hyperlink{class_area}{Area} \&D, \hyperlink{class_criterion}{Criterion} \&c1, \hyperlink{class_criterion}{Criterion} \&c2) override
+\begin{DoxyCompactList}\small\item\em It finds a minimum point with given parameters. \end{DoxyCompactList}\item 
+double \hyperlink{class_fletcher___rivs_a797e04bd845d2a9d8ad6506b3fd33cec}{argmin} (vector$<$ double $>$ x, \hyperlink{class_function}{Function} \&f, \hyperlink{class_area}{Area} \&D, double)
+\begin{DoxyCompactList}\small\item\em It finds the minimum point of the objective function in a given direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class implements the Fletcher-\/\+Reeves method. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_fletcher___rivs_a797e04bd845d2a9d8ad6506b3fd33cec}\label{class_fletcher___rivs_a797e04bd845d2a9d8ad6506b3fd33cec}} 
+\index{Fletcher\+\_\+\+Rivs@{Fletcher\+\_\+\+Rivs}!argmin@{argmin}}
+\index{argmin@{argmin}!Fletcher\+\_\+\+Rivs@{Fletcher\+\_\+\+Rivs}}
+\subsubsection{\texorpdfstring{argmin()}{argmin()}}
+{\footnotesize\ttfamily double Fletcher\+\_\+\+Rivs\+::argmin (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{x,  }\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{\hyperlink{class_area}{Area} \&}]{D,  }\item[{double}]{argmineps }\end{DoxyParamCaption})}
+
+
+
+It finds the minimum point of the objective function in a given direction. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & starting point \\
+\hline
+\mbox{\tt in}  & {\em f} & objective function \\
+\hline
+\mbox{\tt in}  & {\em D} & area of minimization \\
+\hline
+\mbox{\tt in}  & {\em argmineps} & accuracy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a positive number equal to the distance from the starting point to the point of minimum of the objective function in the given direction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fletcher___rivs_a2d42dcde66a34d8199d4d2a8e7c6805e}\label{class_fletcher___rivs_a2d42dcde66a34d8199d4d2a8e7c6805e}} 
+\index{Fletcher\+\_\+\+Rivs@{Fletcher\+\_\+\+Rivs}!find\+\_\+border\+\_\+alpha@{find\+\_\+border\+\_\+alpha}}
+\index{find\+\_\+border\+\_\+alpha@{find\+\_\+border\+\_\+alpha}!Fletcher\+\_\+\+Rivs@{Fletcher\+\_\+\+Rivs}}
+\subsubsection{\texorpdfstring{find\+\_\+border\+\_\+alpha()}{find\_border\_alpha()}}
+{\footnotesize\ttfamily double Fletcher\+\_\+\+Rivs\+::find\+\_\+border\+\_\+alpha (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{x,  }\item[{\hyperlink{class_area}{Area} \&}]{D }\end{DoxyParamCaption}) const}
+
+
+
+It finds the distance to the nearest boundary of the region in a given direction. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & starting point \\
+\hline
+\mbox{\tt in}  & {\em D} & area of minimization \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_fletcher___rivs_a2aa5d90c6c4ac0773533adb4ec7c9038}\label{class_fletcher___rivs_a2aa5d90c6c4ac0773533adb4ec7c9038}} 
+\index{Fletcher\+\_\+\+Rivs@{Fletcher\+\_\+\+Rivs}!get\+\_\+method\+\_\+name@{get\+\_\+method\+\_\+name}}
+\index{get\+\_\+method\+\_\+name@{get\+\_\+method\+\_\+name}!Fletcher\+\_\+\+Rivs@{Fletcher\+\_\+\+Rivs}}
+\subsubsection{\texorpdfstring{get\+\_\+method\+\_\+name()}{get\_method\_name()}}
+{\footnotesize\ttfamily const char $\ast$ Fletcher\+\_\+\+Rivs\+::get\+\_\+method\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_optimization_a7d4cf7e7c0d0726822e6e29adecbd252}{Optimization}.
+
+\mbox{\Hypertarget{class_fletcher___rivs_a65fe40d186bda0e0a4de8a75aaac01e8}\label{class_fletcher___rivs_a65fe40d186bda0e0a4de8a75aaac01e8}} 
+\index{Fletcher\+\_\+\+Rivs@{Fletcher\+\_\+\+Rivs}!minimize@{minimize}}
+\index{minimize@{minimize}!Fletcher\+\_\+\+Rivs@{Fletcher\+\_\+\+Rivs}}
+\subsubsection{\texorpdfstring{minimize()}{minimize()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Fletcher\+\_\+\+Rivs\+::minimize (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{x,  }\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{\hyperlink{class_area}{Area} \&}]{D,  }\item[{\hyperlink{class_criterion}{Criterion} \&}]{c1,  }\item[{\hyperlink{class_criterion}{Criterion} \&}]{c2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+It finds a minimum point with given parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & starting point \\
+\hline
+\mbox{\tt in}  & {\em f} & objective function \\
+\hline
+\mbox{\tt in}  & {\em D} & area of minimization \\
+\hline
+\mbox{\tt in}  & {\em c1} & break criterion1 \\
+\hline
+\mbox{\tt in}  & {\em c2} & break criterion2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximation of the vector x on which the objective function reaches a local minimum 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_optimization_afbcc2bddcaf625671385b2e2d77fc038}{Optimization}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+User/\+Documents/\+Visual Studio 2015/\+Projects/\+Optimization\+\_\+step2/\hyperlink{_h_optimization_8h}{H\+Optimization.\+h}\item 
+C\+:/\+Users/\+User/\+Documents/\+Visual Studio 2015/\+Projects/\+Optimization\+\_\+step2/\hyperlink{_optimization_8cpp}{Optimization.\+cpp}\end{DoxyCompactItemize}

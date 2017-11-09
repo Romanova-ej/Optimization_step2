@@ -3,52 +3,70 @@
 #include "HFunction.h"
 #include "HOptimization.h"
 using namespace std;
-//double eps = 0.001;
 
-mt19937 mt_rand(time(0));//time(0)
+mt19937 mt_rand(time(0));
 uniform_real_distribution<>u(0, 1);
 
-const char* Fletcher_Rivs::get_method_name() const { return "Fletcher Rivs method"; }
-double Fletcher_Rivs::find_border_alpha(vector<double>& x, Area& D) {
-	double border = forBORDER;//или первый вынести из цикла
-	double temp = forBORDER;
+const char* FletcherRivs::getMethodName() const {
+	return "Fletcher Rivs method";
+}
+
+/**
+\brief It finds the distance to the nearest boundary of the area in a given direction
+\param[in] x starting point
+\param[in] D area of minimization
+*/
+const double FletcherRivs::findBorderAlpha(const vector<double>& x, Area& D) const {
+	double border = FOR_BORDER;//или первый вынести из цикла
+	double temp = FOR_BORDER;
 	for (int i = 0; i < x.size(); ++i) {
-		if (p[i] > 0) temp = (D.get_right()[i] - x[i]) / p[i];
-		if (p[i] < 0) temp = (D.get_left()[i] - x[i]) / p[i];
-		if (abs(temp) < border) border = abs(temp);
+		if (p[i] > 0) temp = (D.getRight()[i] - x[i]) / p[i];
+		if (p[i] < 0) temp = (D.getLeft()[i] - x[i]) / p[i];
+		if (fabs(temp) < border) border = fabs(temp);
 	}
 	return border;
 }
-vector<double> Fletcher_Rivs::minimize( vector<double> x, Function& f, Area& D, Criterion& c1, Criterion& c2) {//x -- наачльная точка
-	double b = 0; double a = 1;//////////ВАЖНО: Здесь с1 -- критерий нормы градиента, в который мы засунули свою точность эпсилон. тут в аргмине точность должна быть такая же. если меняем критерий, то с1 все равно должен быть с эпсилон
-//иначе можно брать минимум из эпсилон в критериях, если оба не зависят от эпсилон, то берется по умолчанию. или передавать отдельно точность
-	//попробуем создавать тут эпислон такое, чтобы работало
-	double epsilon_for_argmin = c1.get_eps() < c2.get_eps() ? c1.get_eps() : c2.get_eps();//<=0.001
-	vector<double> r0(f.grad(x));
-	vector<double> x0(x);////////для нормальной работы критериев произвольных
+
+
+vector<double> FletcherRivs::minimize(vector<double> x, std::shared_ptr<Function> f, Area& D,
+	                                   Criterion& c) {
+	double b = 0; double a = 1;
+	double epsilon_for_argmin = c.getEps();
+	vector<double> r0(f.getGradient(x));
+	vector<double> x0(x);
+	int noChange(0);
 	p = (-1)*r0;
 	vector<double> r(x.size());
-  
-	for (int k = 0; !c1.stop(x,x0, f, k) && !c2.stop(x,x0, f, k) && a; ++k) {
+	for (int k = 0; !c.stop(x, x0, f, k,noChange) && a; ++k) {
 		x0 = x;
-		a = argmin(x, f, D,epsilon_for_argmin);
+		a = calculateArgmin(x, f, D, epsilon_for_argmin);
 		x = x + a*p;
-		r = f.grad(x);
+		r = f.getGradient(x);
 		b = scalar_prod(r, r) / scalar_prod(r0, r0);
 		p = (-1)*r + b*p;
 		r0 = r;
-		newiteration();
+		newIteration();
+		if (x == x0) ++noChange;
 	}
 	return x;
 }
-double Fletcher_Rivs::argmin(vector<double> x, Function& f, Area& D,double argmineps) {
-	double l = 0, r = find_border_alpha(x, D);
+
+/**
+\brief It finds the minimum point of the objective function in a given direction
+\param[in] x starting point
+\param[in] f objective function
+\param[in] D area of minimization
+\param[in] argmineps accuracy
+\return a positive number equal to the distance from the starting point to the point of minimum of the objective function in the given direction
+*/
+double FletcherRivs::calculateArgmin(vector<double> x, Function& f, Area& D,
+	                         double argmineps) const {
+	double l = 0, r = findBorderAlpha(x, D);
 	double m = (l + r) / 2;
-	Criterion_one_dim_norm c(argmineps*0.1);
-	while (!c.stop(vector<double> (1,f.directional_derivative(x + m*p, p)),x,f,0)) {
-		//while (abs(f.directional_derivative(x + m*p, p)) >= 0.00001){
-//	while (abs(f.directional_derivative(x + m*p, p)) >= 0.0001) {//быстрее всех(иногда циклится)//здесь конкретный критерий всегда, это внутренность, я сама выбираю
-		if (f.directional_derivative(x + m*p, p) > 0)
+	CriterionOneDimNorm c(argmineps*0.1);
+	for (int k = 0; !c.stop(vector<double>(1, f.getDirectionalDerivative(x + m*p, p)),
+		x, f, k);++k) {
+		if (f.getDirectionalDerivative(x + m*p, p) > 0)
 			r = m;
 		else l = m;
 		m = (l + r) / 2;
@@ -56,61 +74,74 @@ double Fletcher_Rivs::argmin(vector<double> x, Function& f, Area& D,double argmi
 	return m;
 }
 
+/**
+\brief It simulates uniform distribution in a given area
+\param[in] D area for simulates
+\return a vector having a uniform distribution in the area D
+*/
 
-
-vector<double> Random_Search::Uni_in_D(Area& D) {
-	int dim = D.get_left().size();
+vector<double> RandomSearch::simulateUniformInD(Area& D) {
+	int dim = D.getLeft().size();
 	vector<double> randx;
 	for (int k = 0; k < dim; ++k) {
-		randx.push_back(D.get_left()[k] + (D.get_right()[k] - D.get_left()[k])*u(mt_rand));
+		randx.push_back(D.getLeft()[k] + (D.getRight()[k] - D.getLeft()[k])*
+			            u(mt_rand));
 	}
 	return randx;
 }
-Random_Search::Random_Search(double probability, int whenSTOP, double whatchange) :p(probability), STOPif_no_change(whenSTOP), change(whatchange) {
-	radius = 4;// initial_radius(D);
-	radius_change = radius;
+
+
+RandomSearch::RandomSearch(Area& D, double probability, int whenSTOP,
+	                         double whatchange) :p(probability),
+	                         stopIfnoChange(whenSTOP), change(whatchange) {
+	radius = initializeRadius(D);
+	radiusChange = radius;
 }
-double Random_Search::initial_radius(Area& D) const {
+double RandomSearch::initializeRadius(Area& D) const {
 	double mind = 0;
-	for (int i = 0; i < D.get_dim(); ++i) {
-		double temp = D.get_right()[i] - D.get_left()[i];
+	for (int i = 0; i < D.getDim(); ++i) {
+		double temp = D.getRight()[i] - D.getLeft()[i];
 		mind = mind > temp ? temp : mind;
 	}
 	return mind;
 }
-const char* Random_Search::get_method_name() const { return "Random Search"; }
-vector<double> Random_Search::minimize( vector<double> x, Function& f, Area& D, Criterion& c1, Criterion& c2) {//мь перед x &
-	int dim = f.get_dim();
+const char* RandomSearch::getMethodName() const { return "Random Search"; }
+vector<double> RandomSearch::minimize(vector<double> x, std::shared_ptr<Function> f, Area& D,
+	                                   Criterion& c) {
+
+	int dim = f->getDim();
 	vector<double>y(dim);
 	vector<double>y0(dim);
 	vector<double> leftB(dim);
 	vector<double> rightB(dim);
 	bool flag;
-	x = Uni_in_D(D);
+	x = simulateUniformInD(D);
 	y = x;
-	for (int i = 0, no_change = 0; !c1.stop(y,y0,f,i,no_change) && !c2.stop(y,y0,f,i,no_change); ++i) {//второй критерий все-таки хотелось бы как-то вынести
-		if (u(mt_rand) < p) {//генерируем х
-			x = Uni_in_D(D);
+	for (int i = 0, no_change = 0; !c.stop(y, y0, f, i, no_change); ++i) {
+		if (u(mt_rand) < p) {
+			x = simulateUniformInD(D);
 			flag = true;
 		}
 		else {
 			for (int k = 0; k < dim; ++k) {
-				leftB[k] = y[k] - radius_change > D.get_left()[k] ? y[k] - radius_change : D.get_left()[k];
-				rightB[k] = y[k] + radius_change < D.get_right()[k] ? y[k] + radius_change : D.get_right()[k];
+				leftB[k] = y[k] - radiusChange > D.getLeft()[k] ? y[k] - 
+					       radiusChange : D.getLeft()[k];
+				rightB[k] = y[k] + radiusChange < D.getRight()[k] ? y[k] + 
+					        radiusChange : D.getRight()[k];
 			}
 			Area B(leftB, rightB);
-			x = Uni_in_D(B);
-			radius_change *= change;
+			x = simulateUniformInD(B);
+			radiusChange *= change;
 			flag = false;
 		}
 		if (f(y) > f(x)) {
 			y0 = y;
 			y = x;
 			no_change = 0;
-			if (flag) radius_change = radius;
+			if (flag) radiusChange = radius;
 		}
 		else ++no_change;
-		newiteration();
+		newIteration();
 	}
 	return y;
 }
