@@ -9,6 +9,7 @@
 #include <vector>
 #include <iomanip>
 #include <random>
+#include <exception>
 #include "HArea.h"
 #include "HCriterion.h"
 #include "HFunction.h"
@@ -119,7 +120,8 @@ int main()
 			for (int i = 0; i < f->getDim(); ++i) {
 				cin >> temp;
 				r.push_back(temp);
-				if (temp < l[i]) throw 3;
+				if (temp < l[i]) throw std::invalid_argument
+				("ERROR: you entered an empty area!");
 			}
 
 			Area tempD(l, r);
@@ -153,7 +155,7 @@ int main()
 			cout << "Area: " << endl;
 			printAreaf(f->getArea());
 		}
-		catch (int i) { cerr << "ERROR: you entered an empty area!" << endl; }
+		catch (exception& e) { cerr << e.what() << endl; }
 	}
 
 
@@ -163,13 +165,16 @@ int main()
 		for (int i = 0; i < f->getDim(); ++i) {
 			double a;
 			cin >> a;
-			if ((a < f->getArea().getLeft()[i]) || (a > f->getArea().getRight()[i])) throw 1;
+			if ((a < f->getArea().getLeft()[i]) ||
+				(a > f->getArea().getRight()[i])) throw std::domain_error
+				("starting point does not belong to the area!");
 			x.push_back(a);
 		}
 
 		std::shared_ptr<Optimization> opt;
 		int methodNumber;
-		cout << "Select optimization method" << endl << "1. Fletcher Reeves method"
+		cout << "Select optimization method" << endl <<
+			"1. Fletcher Reeves method"
 			<< endl << "2. Random search" << endl;
 		cin >> methodNumber;
 		switch (methodNumber)
@@ -190,11 +195,11 @@ int main()
 
 		std::shared_ptr<Criterion> stopCriterion;
 		cout << "Select stop criterion" << endl <<
-			"1. Criterion for the norm of the gradient of a function" << endl <<
-			"2. Criterion for exceeding the agreed number of iterations" << endl <<
-			"3. Criterion for exceeding the agreed number of iterative iterations" << endl
-			<< "4. Criterion of modulus of the difference between the values of a function"
-			<< endl;
+			"1. Criterion for the norm of the gradient of a function" << endl
+			<< "2. Criterion for exceeding the agreed number of iterations" <<
+			endl << "3. Criterion for exceeding the agreed number of iterative"
+			" iterations" << endl << "4. Criterion of modulus of the difference"
+			" between the values of a function" << endl;
 		int criterionNumber;
 		cin >> criterionNumber;
 		switch (criterionNumber)
@@ -205,25 +210,28 @@ int main()
 				double epsilon;
 				cout << "epsilon = ";
 				cin >> epsilon;
-				if (epsilon <= 0) throw 2;
+				if (epsilon <= 0) throw invalid_argument
+				("ERROR: epsilon must be positive!");
 				stopCriterion = std::make_shared<CriterionGradNorm>(epsilon);
 				//it is logical for Fletcher-Reeves
 			}
-			catch (int i) { cerr << "ERROR: epsilon must be positive!" << endl; }
+			catch (exception &ep) { cerr << ep.what() << endl; }
 			break;
 		}
 		case 2: {
 			int nIteration;
 			cout << "quantity of iteration = ";
 			cin >> nIteration;
-			stopCriterion = std::make_shared<CriterionNumOfIteration>(nIteration);
+			stopCriterion = std::make_shared<CriterionNumOfIteration>
+				(nIteration);
 			break;
 		}
 		case 3: {
 			int nIteration;
 			cout << "quantity of iteration = ";
 			cin >> nIteration;
-			stopCriterion = std::make_shared<CriterionNumOfNochangeIteration>(nIteration);
+			stopCriterion = std::make_shared<CriterionNumOfNochangeIteration>
+				(nIteration);
 			//it is logical for random search
 			break;
 		}
@@ -232,10 +240,12 @@ int main()
 				double epsilon;
 				cout << "epsilon = ";
 				cin >> epsilon;
-				if (epsilon <= 0) throw 2;
-				stopCriterion = std::make_shared<CriterionDifferenceOfValuef>(epsilon);
+				if (epsilon <= 0) throw invalid_argument
+				("ERROR: epsilon must be positive!");
+				stopCriterion = std::make_shared<CriterionDifferenceOfValuef>
+					(epsilon);
 			}
-			catch (int i) { cerr << "ERROR: epsilon must be positive! " << endl; }
+			catch (exception &ep) { cerr << ep.what() << endl; }
 			break;
 		}
 		default: {
@@ -249,7 +259,9 @@ int main()
 		vector_print(result);
 		cout << "k= " << opt->getCounter() << endl;
 	}
-	catch (int i) { cerr << "ERROR: starting point does not belong to the area" << endl; }
+	catch (exception& e) {
+		cerr << e.what() << endl;
+	}
 
 	system("pause");
 	return 0;

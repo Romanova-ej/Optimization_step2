@@ -3,7 +3,8 @@
 using namespace std;
 
 
-inline const double Criterion::getEps() const { return eps; }
+inline const double Criterion::getEps() const {
+	return eps; }
 const bool CriterionGradNorm::stop(vector<double> x, const  vector<double>& y,
 	Function& f, int nIteration, int nIterationWithoutChange)  const {
 	return ((norm(f.getGradient(x)) < getEps()) || 
