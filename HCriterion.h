@@ -8,6 +8,7 @@
 #include <iomanip>
 #include<random>
 #include "HFunction.h"
+#include"Hother.h"
 using namespace std;
 /**
 \file
@@ -23,11 +24,12 @@ class Criterion {
 	int stopIndex;
 public:
 	const double getEps() const;
-	const bool stopIfMoreIteration(int nIteration) const;
+	const bool stopIfMoreIteration( int nIteration) const;
 	Criterion(double epsilon, int stopId) :eps(epsilon), stopIndex(stopId) {
 	};
-	virtual const bool stop(vector<double>, const  vector<double>&, Function&,
-		int, int = 0) const = 0;
+	virtual const bool stop(const vector<double>&, const  vector<double>&,
+		const Function&,int, int = 0) const = 0;
+	friend double norm(const vector<double>& x);
 };
 
 /**
@@ -37,8 +39,8 @@ class CriterionGradNorm :public Criterion {
 public:
 	CriterionGradNorm(double epsilon = 0.001, int stopId = 10000) :
 		Criterion(epsilon, stopId) {};
-	virtual const bool stop(vector<double>, const  vector<double>&, Function&,
-		int, int = 0)  const override;
+	virtual const bool stop(const vector<double>&, const  vector<double>&,
+		const Function&,int, int = 0)  const override;
 };
 
 /**
@@ -48,8 +50,9 @@ class CriterionNumOfIteration :public Criterion {
 public:
 	CriterionNumOfIteration(int stopId = 10000, double epsilon = 0.001) :
 		Criterion(epsilon, stopId) {};
-	virtual const bool stop(vector<double> x, const vector<double>& y,
-		Function& f, int nIteration, int nIterationWithoutChange = 0) const override;
+	virtual const bool stop(const vector<double>& x, const vector<double>& y,
+		const Function& f, int nIteration, int nIterationWithoutChange = 0) 
+		const override;
 };
 
 /**
@@ -60,8 +63,9 @@ class CriterionNumOfNochangeIteration :public Criterion {
 public:
 	CriterionNumOfNochangeIteration(int N = 1000, double epsilon = 0.001,
 		int stopId = 10000) :Criterion(epsilon, stopId), stopIfnoChange(N) {};
-	virtual const bool stop(vector<double> x, const vector<double>& y,
-		Function& f, int nIteration, int nIterationWithoutChange) const override;
+	virtual const bool stop(const vector<double>& x, const vector<double>& y,
+		const Function& f, int nIteration, int nIterationWithoutChange) 
+		const override;
 };
 
 /**
@@ -71,8 +75,9 @@ class CriterionDifferenceOfValuef : public Criterion {
 public:
 	CriterionDifferenceOfValuef(double epsilon = 0.001, int stopId = 10000) :
 		Criterion(epsilon, stopId) {};
-	virtual const bool stop(vector<double> x, const  vector<double>& y,
-		Function& f, int nIteration, int nIterationWithoutChange = 0) const override;
+	virtual const bool stop(const vector<double>& x, const  vector<double>& y,
+		const Function& f, int nIteration, int nIterationWithoutChange = 0)
+		const override;
 };
 /**
 \brief Criterion for the closeness of the norm to zero
@@ -82,6 +87,7 @@ class CriterionOneDimNorm :public Criterion {
 public:
 	CriterionOneDimNorm(double epsilon = 0.001, int stopId = 10000) :
 		Criterion(epsilon, stopId) {};
-	virtual const bool stop(vector<double> x, const vector<double>& y,
-		Function& f, int nIteration, int nIterationWithoutChange = 0) const override;
+	virtual const bool stop(const vector<double>& x, const vector<double>& y,
+		const Function& f, int nIteration, int nIterationWithoutChange = 0) 
+		const override;
 };

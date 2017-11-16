@@ -25,11 +25,11 @@ double Function::getDirectionalDerivative(const vector<double>& x,
 	return(scalar_prod(getGradient(x), (1 / norm(p))*p));
 }
 
-double Function::operator()(const vector<double>&x) {
+const double Function::operator()(const vector<double>&x) {
 	return f(x);
 }
 
-Area Function::getArea() const {
+const Area& Function::getArea() const {
 	return D;
 }
 

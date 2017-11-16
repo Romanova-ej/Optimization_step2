@@ -17,7 +17,7 @@ const char* FletcherRivs::getMethodName() const {
 \param[in] D area of minimization
 */
 const double FletcherRivs::findBorderAlpha(const vector<double>& x,
-	                                       Area& D) const {
+	const  Area& D) const {
 	double border = FOR_BORDER;
 	double temp = FOR_BORDER;
 	for (int i = 0; i < x.size(); ++i) {
@@ -28,8 +28,8 @@ const double FletcherRivs::findBorderAlpha(const vector<double>& x,
 	return border;
 }
 
-vector<double> FletcherRivs::minimize(vector<double> x, Function& f, 
-	                                  Criterion& c) {
+vector<double> FletcherRivs::minimize(vector<double> x, const Function& f,
+	const  Criterion& c) {
 	double b = 0; double a = 1;
 	double epsilon_for_argmin = c.getEps();
 	vector<double> r0(f.getGradient(x));
@@ -58,7 +58,7 @@ vector<double> FletcherRivs::minimize(vector<double> x, Function& f,
 \param[in] argmineps accuracy
 \return a positive number equal to the distance from the starting point to the point of minimum of the objective function in the given direction
 */
-double FletcherRivs::calculateArgmin(vector<double> x, Function& f,
+double FletcherRivs::calculateArgmin(const vector<double>& x, const Function& f,
 	double argmineps) const {
 	double l = 0, r = findBorderAlpha(x, f.getArea());
 	double m = (l + r) / 2;
@@ -79,7 +79,7 @@ double FletcherRivs::calculateArgmin(vector<double> x, Function& f,
 \param[in] D area for simulates
 \return a vector having a uniform distribution in the area D
 */
-vector<double> RandomSearch::simulateUniformInD(Area& D) {
+vector<double> RandomSearch::simulateUniformInD(const Area& D) {
 	int dim = D.getLeft().size();
 	vector<double> randx;
 	for (int k = 0; k < dim; ++k) {
@@ -89,13 +89,13 @@ vector<double> RandomSearch::simulateUniformInD(Area& D) {
 	return randx;
 }
 
-RandomSearch::RandomSearch(Area& D, double probability, int whenSTOP,
+RandomSearch::RandomSearch(const Area& D, double probability, int whenSTOP,
 	double whatchange) :p(probability),
 	stopIfnoChange(whenSTOP), change(whatchange) {
 	radius = initializeRadius(D);
 	radiusChange = radius;
 }
-double RandomSearch::initializeRadius(Area& D) const {
+double RandomSearch::initializeRadius(const Area& D) const {
 	double mind = 0;
 	for (int i = 0; i < D.getDim(); ++i) {
 		double temp = D.getRight()[i] - D.getLeft()[i];
@@ -104,8 +104,8 @@ double RandomSearch::initializeRadius(Area& D) const {
 	return mind;
 }
 const char* RandomSearch::getMethodName() const { return "Random Search"; }
-vector<double> RandomSearch::minimize(vector<double> x, Function& f, 
-	                                  Criterion& c) {
+vector<double> RandomSearch::minimize(vector<double> x, const Function& f,
+	const   Criterion& c) {
 	int dim = f.getDim();
 	vector<double>y(dim);
 	vector<double>y0(dim);
@@ -131,7 +131,7 @@ vector<double> RandomSearch::minimize(vector<double> x, Function& f,
 			radiusChange *= change;
 			flag = false;
 		}
-		if (f(y) > f(x)) {
+		if (f.f(y) > f.f(x)) {
 			y0 = y;
 			y = x;
 			no_change = 0;

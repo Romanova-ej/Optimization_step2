@@ -17,42 +17,13 @@
 #include <memory>
 using namespace std;
 
-vector<double> operator+(const vector<double>& a, const vector<double> &b) {
-	vector<double> temp;
-	for (int i = 0; i < a.size(); ++i)
-		temp.push_back(a[i] + b[i]);
-	return temp;
-}
-
-const vector<double> operator*(const double a, const vector<double> &B) {
-	vector<double> temp;
-	for (int i = 0; i < B.size(); ++i)
-		temp.push_back(a*B[i]);
-	return temp;
-}
-
-void vector_print(vector<double> x) {
+void vector_print(const vector<double> &x) {
 	for (int i = 0; i < x.size(); ++i)
 		cout << x[i] << "   ";
 	cout << endl;
 }
 
-double scalar_prod(const vector<double>& a, const vector<double>& b) {
-	double sum = 0;
-	for (int i = 0; i < a.size(); ++i)
-		sum += a[i] * b[i];
-	return sum;
-}
-
-double norm(const vector<double>& x) {
-	double temp = 0;
-	for (int i = 0; i < x.size(); ++i) {
-		if (fabs(x[i]) > temp) temp = fabs(x[i]);
-	}
-	return temp;
-}
-
-void printAreaf(Area& D) {
+void printAreaf(const Area& D) {
 	cout << "[" << D.getLeft()[0] << ";" <<
 		D.getRight()[0] << "]";
 	for (int i = 1; i < D.getDim(); ++i) {

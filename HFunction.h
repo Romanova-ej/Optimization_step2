@@ -9,6 +9,7 @@
 #include "HArea.h"
 #include <memory>
 #include<random>
+#include "Hother.h"
 using namespace std;
 /**
 \file
@@ -28,7 +29,7 @@ public:
 	Function();
 	void setDim(const int);
 	int const getDim() const;
-	Area getArea() const;
+	const Area& getArea() const;
 	virtual const  double f(const vector<double>&) const = 0;
 	~Function();
 	virtual const char* getFunctionName() const = 0;
@@ -46,8 +47,9 @@ public:
 	\param[in] x vector-point
 	\param[in] p directing vector
 	*/
-	double getDirectionalDerivative(const vector<double>& x, const vector<double>&p) const;
-	double  operator()(const vector<double>& x);
+	double getDirectionalDerivative(const vector<double>& x, 
+		const vector<double>&p) const;
+	const double  operator()(const vector<double>& x);
 	/**
 	\brief It computes the norm of the vector x
 	*/
@@ -55,9 +57,12 @@ public:
 	/**
 	\brief It computes the scalar product between the vectors a and b
 	*/
-	friend double scalar_prod(const vector<double>& a, const vector<double>& b);
-	friend const vector<double> operator*(const double a, const vector<double> &B);
-	friend vector<double> operator+(const vector<double>& a, const vector<double> &b);
+	friend double scalar_prod(const vector<double>& a, 
+		const vector<double>& b);
+	friend const vector<double> operator*(const double a, 
+		const vector<double> &B);
+	friend vector<double> operator+(const vector<double>& a,
+		const vector<double> &b);
 };
 /**
 \brief Function of two variables

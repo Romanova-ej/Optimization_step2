@@ -9,6 +9,7 @@
 #include<random>
 #include "HArea.h"
 #include "HCriterion.h"
+#include"Hother.h"
 #include "HFunction.h"
 using namespace std;
 /**
@@ -29,8 +30,8 @@ public:
 	\param[in] c1 break criterion
 	\return approximation of the vector x on which the objective function reaches a minimum
 	*/
-	virtual vector<double> minimize(vector<double> x, Function& f,
-		Criterion& c) = 0;
+	virtual vector<double> minimize(vector<double> x, const Function& f,
+		const  Criterion& c) = 0;
 	virtual const char* getMethodName() const = 0;
 	int getCounter() const { return counter; }
 	void newIteration() { ++counter; }
@@ -44,10 +45,11 @@ class  FletcherRivs :public Optimization {
 	vector<double> p;
 public:
 	virtual const char* getMethodName() const;
-	const double findBorderAlpha(const vector<double>& x, Area& D) const;
-	virtual vector<double> minimize(vector<double> x, Function& f,
-		Criterion& c) override;
-	double calculateArgmin(vector<double> x, Function& f, double) const;
+	const double findBorderAlpha(const vector<double>& x, const Area& D) const;
+	virtual vector<double> minimize(vector<double> x, const Function& f,
+		const Criterion& c) override;
+	double calculateArgmin(const vector<double>& x, const Function& f,
+		double) const;
 };
 
 /**
@@ -59,14 +61,14 @@ class RandomSearch : public Optimization {
 	double radius;
 	double radiusChange;
 	double change;
-	vector<double> simulateUniformInD(Area& D);
+	vector<double> simulateUniformInD(const Area& D);
 public:
-	RandomSearch(Area& D, double probability = 0.8, int whenStop = 1000,
+	RandomSearch(const Area& D, double probability = 0.8, int whenStop = 1000,
 		double whatChange = 0.9);
-	double initializeRadius(Area& D) const;
+	double initializeRadius(const Area& D) const;
 	virtual const char* getMethodName() const;
-	virtual vector<double> minimize(vector<double> x, Function& f,
-		Criterion& c) override;
+	virtual vector<double> minimize(vector<double> x, const Function& f,
+		const Criterion& c) override;
 };
 
 
